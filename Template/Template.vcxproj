@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{012FB3B3-793D-4CDB-92B3-676F58DA4A89}</ProjectGuid>
+    <RootNamespace>Template</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\</OutDir>
+    <TargetName>KVM Manage</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\</OutDir>
+    <TargetName>KVM Manage</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\ChildDlg\XSplitSaveScene;.\ChildDlg\XFolder;.\StatusBar;.\ChildDlg\XMatrixArray;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\Include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\XLog;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\ProperssCtrl;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\Matrix;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ListCtrl;.\ChildDlg\XCopyUser;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\UserManage;.\DataManage;.\Result;.\JsonManage;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBarManage;.\RibbonBar;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;.\ChildDlg\XBase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\ChildDlg\XMatrixArray;.\ViewManage\Matrix;.\ChildDlg\XFolder;.\ChildDlg\XLog;.\ChildDlg\XSplitSaveScene;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\DataManage;.\ProperssCtrl;.\ChildDlg\XBase;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ChildDlg\XCopyUser;.\ListCtrl;.\Result;.\JsonManage;.\UserManage;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBar;.\StatusBar;.\RibbonBarManage;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>.\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="JsonManage\json_internalarray.inl" />
+    <None Include="JsonManage\json_internalmap.inl" />
+    <None Include="JsonManage\json_valueiterator.inl" />
+    <None Include="JsonManage\sconscript" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\about.ico" />
+    <None Include="res\arrage.ico" />
+    <None Include="res\array.ico" />
+    <None Include="res\bg.ico" />
+    <None Include="res\classview.bmp" />
+    <None Include="res\classview_hc.bmp" />
+    <None Include="res\class_view.ico" />
+    <None Include="res\class_view_hc.ico" />
+    <None Include="res\clear.ico" />
+    <None Include="res\close.ico" />
+    <None Include="res\explorer.bmp" />
+    <None Include="res\explorer_hc.bmp" />
+    <None Include="res\fileview.bmp" />
+    <None Include="res\fileview_hc.bmp" />
+    <None Include="res\file_view.ico" />
+    <None Include="res\file_view_hc.ico" />
+    <None Include="res\group.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\image.ico" />
+    <None Include="res\input.ico" />
+    <None Include="res\kvm.ico" />
+    <None Include="res\langue.ico" />
+    <None Include="res\login.ico" />
+    <None Include="res\login64.ico" />
+    <None Include="res\Login_1.ico" />
+    <None Include="res\menuimages.bmp" />
+    <None Include="res\menuimages_hc.bmp" />
+    <None Include="res\net.ico" />
+    <None Include="res\node.ico" />
+    <None Include="res\node_1.ico" />
+    <None Include="res\open.ico" />
+    <None Include="res\out.ico" />
+    <None Include="res\out64.ico" />
+    <None Include="res\output.ico" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\Power.ico" />
+    <None Include="res\power64.ico" />
+    <None Include="res\properties.bmp" />
+    <None Include="res\properties_hc.bmp" />
+    <None Include="res\properties_wnd.ico" />
+    <None Include="res\properties_wnd_hc.ico" />
+    <None Include="res\save.ico" />
+    <None Include="res\scene.ico" />
+    <None Include="res\seat.ico" />
+    <None Include="res\send.ico" />
+    <None Include="res\sort.bmp" />
+    <None Include="res\sort_hc.bmp" />
+    <None Include="res\Template.ico" />
+    <None Include="res\Template.rc2" />
+    <None Include="res\TemplateDoc.ico" />
+    <None Include="res\theme.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\up.ico" />
+    <None Include="res\user.ico" />
+    <None Include="res\zoom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CatchError\CatchError.h" />
+    <ClInclude Include="ChildDlg\ABout\About.h" />
+    <ClInclude Include="Button\XBtn.h" />
+    <ClInclude Include="ChildDlg\XAlign\XAlign.h" />
+    <ClInclude Include="ChildDlg\XAlign\XBaseWnd.h" />
+    <ClInclude Include="ChildDlg\XAlterUser\XDelegateAlterUser.h" />
+    <ClInclude Include="ChildDlg\XBackGround\XDelegateBackGround.h" />
+    <ClInclude Include="ChildDlg\XBase\XThemeBtn.h" />
+    <ClInclude Include="ChildDlg\XBase\XBaseDialog.h" />
+    <ClInclude Include="ChildDlg\XBase\XThemeText.h" />
+    <ClInclude Include="ChildDlg\XBase\XThemeColor.h" />
+    <ClInclude Include="ChildDlg\XFolder\XStoreTree.h" />
+    <ClInclude Include="ChildDlg\XSeatArrage\XSeatArrage.h" />
+    <ClInclude Include="ChildDlg\XSeatDraw\XSeatDraw.h" />
+    <ClInclude Include="ChildDlg\XSeatImage\XDelegateSeatImage.h" />
+    <ClInclude Include="ChildDlg\XSeatImage\XSeatImage.h" />
+    <ClInclude Include="ChildDlg\XSeatMap\XSeatMap.h" />
+    <ClInclude Include="ChildDlg\XDeviceNet\XDelegateDeviceNet.h" />
+    <ClInclude Include="ChildDlg\XImagePreview\XDelegateImagePreview.h" />
+    <ClInclude Include="ChildDlg\XImagePreview\XImagePreview.h" />
+    <ClInclude Include="ChildDlg\XImage\XDelegateImage.h" />
+    <ClInclude Include="ChildDlg\XMenuInfo\XMenuWnd.h" />
+    <ClInclude Include="ChildDlg\XOSDImage\XBaseMap.h" />
+    <ClInclude Include="ChildDlg\XOSDImage\XDelegateBaseMap.h" />
+    <ClInclude Include="ChildDlg\XAlterNodeName\XAlterName.h" />
+    <ClInclude Include="ChildDlg\XImage\XImage.h" />
+    <ClInclude Include="ChildDlg\XNodeLoginUser\XDelegateNodeLoginUser.h" />
+    <ClInclude Include="ChildDlg\XCopyUser\XCopyUser.h" />
+    <ClInclude Include="ChildDlg\XImage\XDialog.h" />
+    <ClInclude Include="ChildDlg\XPowerManage\XPowerSelectInfo.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XDelegateArragePageOne.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XDelegateArragePageTwo.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XScreenInfo.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="Constant\XDelegateConstantData.h" />
+    <ClInclude Include="DataManage\XData.h" />
+    <ClInclude Include="Handle\FileHandle.h" />
+    <ClInclude Include="Handle\HandleCalculate.h" />
+    <ClInclude Include="Handle\HandleIni.h" />
+    <ClInclude Include="Handle\HandlePath.h" />
+    <ClInclude Include="Handle\HandlePower.h" />
+    <ClInclude Include="Handle\XHandleCode.h" />
+    <ClInclude Include="Handle\XHandleVerification.h" />
+    <ClInclude Include="IniManage\XDelegateIniManage.h" />
+    <ClInclude Include="IniManage\XIniManage.h" />
+    <ClInclude Include="InternalManage\XBaseInternalManage.h" />
+    <ClInclude Include="Constant\XConstant.h" />
+    <ClInclude Include="InternalManage\XTabCtrl\XTabCtrl.h" />
+    <ClInclude Include="JsonManage\autolink.h" />
+    <ClInclude Include="JsonManage\config.h" />
+    <ClInclude Include="JsonManage\features.h" />
+    <ClInclude Include="JsonManage\forwards.h" />
+    <ClInclude Include="JsonManage\json.h" />
+    <ClInclude Include="JsonManage\json_batchallocator.h" />
+    <ClInclude Include="JsonManage\reader.h" />
+    <ClInclude Include="JsonManage\value.h" />
+    <ClInclude Include="JsonManage\writer.h" />
+    <ClInclude Include="JsonManage\XJsonManage.h" />
+    <ClInclude Include="InternalManage\XDelegateInternalManage.h" />
+    <ClInclude Include="InternalManage\XInternalManage.h" />
+    <ClInclude Include="LeftWnd\XDragWnd.h" />
+    <ClInclude Include="LeftWnd\XLeftWnd.h" />
+    <ClInclude Include="LeftWnd\XTreeCtrl.h" />
+    <ClInclude Include="ListCtrl\XListCtrl.h" />
+    <ClInclude Include="ListCtrl\XSetListCtrl.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MessageBox\XMessageBox.h" />
+    <ClInclude Include="MessageBox\XMessageBoxDlg.h" />
+    <ClInclude Include="NetManage\XBaseNetManage.h" />
+    <ClInclude Include="NetManage\XDelegateNetManage.h" />
+    <ClInclude Include="NetManage\XNetManage.h" />
+    <ClInclude Include="NetManage\XSocketTCP.h" />
+    <ClInclude Include="NetManage\XSocketUDP.h" />
+    <ClInclude Include="ProperitesWnd\XDelegatePropertiesWnd.h" />
+    <ClInclude Include="ProperitesWnd\XPropertiesWnd.h" />
+    <ClInclude Include="ProperitesWnd\XPropertyGrid.h" />
+    <ClInclude Include="ProperitesWnd\XProprtyGridFile.h" />
+    <ClInclude Include="ProperssCtrl\XProgressCtrl.h" />
+    <ClInclude Include="ProperitesWnd\XPropertyGridCtrl.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Result\XAlterNodeName.h" />
+    <ClInclude Include="Result\XDevicePara.h" />
+    <ClInclude Include="Result\XLoginInfo.h" />
+    <ClInclude Include="Result\XMatrix.h" />
+    <ClInclude Include="Result\XNodeConnect.h" />
+    <ClInclude Include="Result\XNodeGroup.h" />
+    <ClInclude Include="Result\XNodeInfo.h" />
+    <ClInclude Include="Result\XNodeLogin.h" />
+    <ClInclude Include="Result\XOSDImage.h" />
+    <ClInclude Include="Result\XResult.h" />
+    <ClInclude Include="Result\XTakeOver.h" />
+    <ClInclude Include="Result\XUpdateUserInfo.h" />
+    <ClInclude Include="RibbonBarManage\XBaseRibbonBarManage.h" />
+    <ClInclude Include="RibbonBarManage\XDelegateRibbonBarManage.h" />
+    <ClInclude Include="RibbonBarManage\XRibbonBarManage.h" />
+    <ClInclude Include="RibbonBar\XDelegateRibbonBar.h" />
+    <ClInclude Include="RibbonBar\XRibbonBar.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Template.h" />
+    <ClInclude Include="TemplateDoc.h" />
+    <ClInclude Include="TemplateView.h" />
+    <ClInclude Include="TranslationManage\XDelegateTranslationManage.h" />
+    <ClInclude Include="TranslationManage\XTranslationManage.h" />
+    <ClInclude Include="UserManage\XDelegateUserManage.h" />
+    <ClInclude Include="ChildDlg\XLoginLoad\XLoginLoad.h" />
+    <ClInclude Include="ChildDlg\XLogin\XDelegateLogin.h" />
+    <ClInclude Include="ChildDlg\XLogin\XLogin.h" />
+    <ClInclude Include="Result\XPower.h" />
+    <ClInclude Include="ChildDlg\XPowerManage\XDelegatePowerManage.h" />
+    <ClInclude Include="UserManage\Info\XPowerListInfo.h" />
+    <ClInclude Include="ChildDlg\XPowerManage\XPowerManage.h" />
+    <ClInclude Include="UserManage\Info\XStoreListInfo.h" />
+    <ClInclude Include="UserManage\Info\XSubUserInfo.h" />
+    <ClInclude Include="UserManage\XUserManage.h" />
+    <ClInclude Include="ChildDlg\XAddUser\XDelegateAddUser.h" />
+    <ClInclude Include="ChildDlg\XAddUser\XAddUser.h" />
+    <ClInclude Include="ChildDlg\XNodeLoginUser\XNodeLoginUser.h" />
+    <ClInclude Include="LeftWnd\XDelegateLeftWnd.h" />
+    <ClInclude Include="VideoPlayer\videoinc.h" />
+    <ClInclude Include="VideoPlayer\VideoPlayerConstant.h" />
+    <ClInclude Include="VideoPlayer\XCaculateMultiVideoWindow.h" />
+    <ClInclude Include="VideoPlayer\XMultiVideoWindow.h" />
+    <ClInclude Include="VideoPlayer\XMultiVideoWindowFrame.h" />
+    <ClInclude Include="VideoPlayer\XMultiVideoWindowFrames.h" />
+    <ClInclude Include="VideoPlayer\XRTSP.h" />
+    <ClInclude Include="VideoPlayer\XRTSPHWND.h" />
+    <ClInclude Include="VideoPlayer\XRTSPInfo.h" />
+    <ClInclude Include="VideoPlayer\XVideoPlayer.h" />
+    <ClInclude Include="ViewManage\NodeManage\Info\XNodeGroupInfo.h" />
+    <ClInclude Include="ViewManage\NodeManage\Info\XOutResoluation.h" />
+    <ClInclude Include="ViewManage\NodeManage\Info\XUserLogStatus.h" />
+    <ClInclude Include="ViewManage\NodeManage\XBaseNodeManage.h" />
+    <ClInclude Include="ViewManage\NodeManage\XCaculateNodeManage.h" />
+    <ClInclude Include="ViewManage\NodeManage\XDelegateNodeManage.h" />
+    <ClInclude Include="ViewManage\NodeManage\XDrawNodeManage.h" />
+    <ClInclude Include="ViewManage\NodeManage\XNode.h" />
+    <ClInclude Include="Constant\XConstantData.h" />
+    <ClInclude Include="ChildDlg\XSeatArageName\XSeatArrageName.h" />
+    <ClInclude Include="ViewManage\NodeManage\XNodePage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\Info\XSeatSceneInfo.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XScreen.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XBaseSeatArrageManage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XCaculateSeatArrageManage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XDelegateSeatArrageManage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XDrawSeatArrageManage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XPage.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeat.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeatArrageData.h" />
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeatArrageManage.h" />
+    <ClInclude Include="ChildDlg\XAlterUser\XAlterUser.h" />
+    <ClInclude Include="ChildDlg\XBackGround\XBackGround.h" />
+    <ClInclude Include="ChildDlg\XMenuInfo\XDelegateMenuInfo.h" />
+    <ClInclude Include="ChildDlg\XAlterGroup\XAlterGroup.h" />
+    <ClInclude Include="ChildDlg\XAddGroup\XAddGroup.h" />
+    <ClInclude Include="ViewManage\NodeManage\Info\XChannel.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XColumnChart.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XChart.h" />
+    <ClInclude Include="ChildDlg\XCopyUser\XDelegateCopyUser.h" />
+    <ClInclude Include="ChildDlg\XAddStore\XAddStore.h" />
+    <ClInclude Include="ChildDlg\XAddStore\XDelegateAddStore.h" />
+    <ClInclude Include="ChildDlg\XCenterControl\XCenterControl.h" />
+    <ClInclude Include="ChildDlg\XCenterControl\XColorWnd.h" />
+    <ClInclude Include="Scene\XDelegateScene.h" />
+    <ClInclude Include="ViewManage\Matrix\XBaseMatrixManage.h" />
+    <ClInclude Include="ViewManage\Matrix\XDelegateMatrixManage.h" />
+    <ClInclude Include="ViewManage\Matrix\XCaculateMatrixManage.h" />
+    <ClInclude Include="ChildDlg\XLog\XDelegateLog.h" />
+    <ClInclude Include="ChildDlg\XUpdate\XDelegateUpdate.h" />
+    <ClInclude Include="StatusBar\XDelegateStatusBar.h" />
+    <ClInclude Include="ChildDlg\XFolder\XChildInfo.h" />
+    <ClInclude Include="ChildDlg\XFolder\XAddFolder.h" />
+    <ClInclude Include="ViewManage\SplitManage\XBaseSplitManage.h" />
+    <ClInclude Include="ViewManage\SplitManage\XDelegateSplitManage.h" />
+    <ClInclude Include="ViewManage\SplitManage\XCaculateSplitManage.h" />
+    <ClInclude Include="ChildDlg\AddSplit\XAddSplit.h" />
+    <ClInclude Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.h" />
+    <ClInclude Include="XDelegateView.h" />
+    <ClInclude Include="ViewManage\NodeManage\XNodeManage.h" />
+    <ClInclude Include="ViewManage\XBaseViewManage.h" />
+    <ClInclude Include="ViewManage\XDelegateBaseViewManage.h" />
+    <ClInclude Include="DataManage\XDelegateReciveDataManage.h" />
+    <ClInclude Include="DataManage\XDelegateSendDataManage.h" />
+    <ClInclude Include="DataManage\XReciveDataManage.h" />
+    <ClInclude Include="DataManage\XSendDataManage.h" />
+    <ClInclude Include="ChildDlg\XDeviceNet\XDeviceNet.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XArragePageOne.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XArragePageTwo.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XTree.h" />
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XPropSheet.h" />
+    <ClInclude Include="ChildDlg\XScreenArray\XScreenArray.h" />
+    <ClInclude Include="ViewManage\NodeManage\XNodeAll.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XProgressBar.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPiechart.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPercentage.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XString.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XInserument.h" />
+    <ClInclude Include="Result\XSystemStatus.h" />
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPieChartInfo.h" />
+    <ClInclude Include="Result\XStoreList.h" />
+    <ClInclude Include="NetManage\XNetConfig.h" />
+    <ClInclude Include="Scene\XScene.h" />
+    <ClInclude Include="Scene\XSceneTree.h" />
+    <ClInclude Include="ChildDlg\XSaveScene\XSaveScene.h" />
+    <ClInclude Include="Scene\XSceneData.h" />
+    <ClInclude Include="Scene\XScenePaneData.h" />
+    <ClInclude Include="Scene\XSceneInfo.h" />
+    <ClInclude Include="Scene\XSceneGroupInfo.h" />
+    <ClInclude Include="ChildDlg\XLog\XLog.h" />
+    <ClInclude Include="ViewManage\Matrix\XMatrixManage.h" />
+    <ClInclude Include="ViewManage\Matrix\XDrawMatrixManage.h" />
+    <ClInclude Include="ViewManage\Matrix\XMatrixScreen.h" />
+    <ClInclude Include="ChildDlg\XLog\XLogInfo.h" />
+    <ClInclude Include="Result\XLogPack.h" />
+    <ClInclude Include="ChildDlg\XMatrixArray\XMatrixArray.h" />
+    <ClInclude Include="Result\XNodeStatus.h" />
+    <ClInclude Include="ChildDlg\XUpdate\XUpdate.h" />
+    <ClInclude Include="StatusBar\XStatusBar.h" />
+    <ClInclude Include="ChildDlg\XPowerManage\XPrivilege.h" />
+    <ClInclude Include="ViewManage\NodeManage\Info\XKeyValue.h" />
+    <ClInclude Include="ChildDlg\XBase\XThemeGroupBox.h" />
+    <ClInclude Include="ChildDlg\XFolder\XFolder.h" />
+    <ClInclude Include="Result\XFolderResult.h" />
+    <ClInclude Include="ChildDlg\XFolder\XFolderInfo.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSplitManage.h" />
+    <ClInclude Include="ViewManage\SplitManage\XDrawSplitManage.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSplitScreen.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSplitSignal.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSignal.h" />
+    <ClInclude Include="Result\XSplitResult.h" />
+    <ClInclude Include="Result\XSplitWindow.h" />
+    <ClInclude Include="Result\XSplitSceneResult.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSplitScene.h" />
+    <ClInclude Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CatchError\CatchError.cpp" />
+    <ClCompile Include="ChildDlg\ABout\About.cpp" />
+    <ClCompile Include="Button\XBtn.cpp" />
+    <ClCompile Include="ChildDlg\XAlign\XAlign.cpp" />
+    <ClCompile Include="ChildDlg\XAlign\XBaseWnd.cpp" />
+    <ClCompile Include="ChildDlg\XAlterUser\XDelegateAlterUser.cpp" />
+    <ClCompile Include="ChildDlg\XBackGround\XDelegateBackGround.cpp" />
+    <ClCompile Include="ChildDlg\XBase\XThemeBtn.cpp" />
+    <ClCompile Include="ChildDlg\XBase\XBaseDialog.cpp" />
+    <ClCompile Include="ChildDlg\XBase\XThemeText.cpp" />
+    <ClCompile Include="ChildDlg\XBase\XThemeColor.cpp" />
+    <ClCompile Include="ChildDlg\XFolder\XStoreTree.cpp" />
+    <ClCompile Include="ChildDlg\XSeatArrage\XSeatArrage.cpp" />
+    <ClCompile Include="ChildDlg\XSeatDraw\XSeatDraw.cpp" />
+    <ClCompile Include="ChildDlg\XSeatImage\XDelegateSeatImage.cpp" />
+    <ClCompile Include="ChildDlg\XSeatImage\XSeatImage.cpp" />
+    <ClCompile Include="ChildDlg\XSeatMap\XSeatMap.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceNet\XDelegateDeviceNet.cpp" />
+    <ClCompile Include="ChildDlg\XImagePreview\XDelegateImagePreview.cpp" />
+    <ClCompile Include="ChildDlg\XImagePreview\XImagePreview.cpp" />
+    <ClCompile Include="ChildDlg\XImage\XDelegateImage.cpp" />
+    <ClCompile Include="ChildDlg\XMenuInfo\XMenuWnd.cpp" />
+    <ClCompile Include="ChildDlg\XOSDImage\XBaseMap.cpp" />
+    <ClCompile Include="ChildDlg\XOSDImage\XDelegateBaseMap.cpp" />
+    <ClCompile Include="ChildDlg\XAlterNodeName\XAlterName.cpp" />
+    <ClCompile Include="ChildDlg\XImage\XImage.cpp" />
+    <ClCompile Include="ChildDlg\XNodeLoginUser\XDelegateNodeLoginUser.cpp" />
+    <ClCompile Include="ChildDlg\XCopyUser\XCopyUser.cpp" />
+    <ClCompile Include="ChildDlg\XImage\XDialog.cpp" />
+    <ClCompile Include="ChildDlg\XPowerManage\XPowerSelectInfo.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XDelegateArragePageOne.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XDelegateArragePageTwo.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XScreenInfo.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="Constant\XDelegateConstantData.cpp" />
+    <ClCompile Include="DataManage\XData.cpp" />
+    <ClCompile Include="Handle\FileHandle.cpp" />
+    <ClCompile Include="Handle\HandleCalculate.cpp" />
+    <ClCompile Include="Handle\HandleIni.cpp" />
+    <ClCompile Include="Handle\HandlePath.cpp" />
+    <ClCompile Include="Handle\HandlePower.cpp" />
+    <ClCompile Include="Handle\XHandleCode.cpp" />
+    <ClCompile Include="Handle\XHandleVerification.cpp" />
+    <ClCompile Include="IniManage\XDelegateIniManage.cpp" />
+    <ClCompile Include="IniManage\XIniManage.cpp" />
+    <ClCompile Include="InternalManage\XBaseInternalManage.cpp" />
+    <ClCompile Include="Constant\XConstant.cpp" />
+    <ClCompile Include="InternalManage\XTabCtrl\XTabCtrl.cpp" />
+    <ClCompile Include="JsonManage\json_reader.cpp" />
+    <ClCompile Include="JsonManage\json_value.cpp" />
+    <ClCompile Include="JsonManage\json_writer.cpp" />
+    <ClCompile Include="JsonManage\XJsonManage.cpp" />
+    <ClCompile Include="InternalManage\XDelegateInternalManage.cpp" />
+    <ClCompile Include="InternalManage\XInternalManage.cpp" />
+    <ClCompile Include="LeftWnd\XDragWnd.cpp" />
+    <ClCompile Include="LeftWnd\XLeftWnd.cpp" />
+    <ClCompile Include="LeftWnd\XTreeCtrl.cpp" />
+    <ClCompile Include="ListCtrl\XListCtrl.cpp" />
+    <ClCompile Include="ListCtrl\XSetListCtrl.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MessageBox\XMessageBox.cpp" />
+    <ClCompile Include="MessageBox\XMessageBoxDlg.cpp" />
+    <ClCompile Include="NetManage\XBaseNetManage.cpp" />
+    <ClCompile Include="NetManage\XDelegateNetManage.cpp" />
+    <ClCompile Include="NetManage\XNetManage.cpp" />
+    <ClCompile Include="NetManage\XSocketTCP.cpp" />
+    <ClCompile Include="NetManage\XSocketUDP.cpp" />
+    <ClCompile Include="ProperitesWnd\XDelegatePropertiesWnd.cpp" />
+    <ClCompile Include="ProperitesWnd\XPropertiesWnd.cpp" />
+    <ClCompile Include="ProperitesWnd\XPropertyGrid.cpp" />
+    <ClCompile Include="ProperitesWnd\XProprtyGridFile.cpp" />
+    <ClCompile Include="ProperssCtrl\XProgressCtrl.cpp" />
+    <ClCompile Include="ProperitesWnd\XPropertyGridCtrl.cpp" />
+    <ClCompile Include="Result\XAlterNodeName.cpp" />
+    <ClCompile Include="Result\XDevicePara.cpp" />
+    <ClCompile Include="Result\XLoginInfo.cpp" />
+    <ClCompile Include="Result\XMatrix.cpp" />
+    <ClCompile Include="Result\XNodeConnect.cpp" />
+    <ClCompile Include="Result\XNodeGroup.cpp" />
+    <ClCompile Include="Result\XNodeInfo.cpp" />
+    <ClCompile Include="Result\XNodeLogin.cpp" />
+    <ClCompile Include="Result\XOSDImage.cpp" />
+    <ClCompile Include="Result\XResult.cpp" />
+    <ClCompile Include="Result\XTakeOver.cpp" />
+    <ClCompile Include="Result\XUpdateUserInfo.cpp" />
+    <ClCompile Include="RibbonBarManage\XBaseRibbonBarManage.cpp" />
+    <ClCompile Include="RibbonBarManage\XDelegateRibbonBarManage.cpp" />
+    <ClCompile Include="RibbonBarManage\XRibbonBarManage.cpp" />
+    <ClCompile Include="RibbonBar\XDelegateRibbonBar.cpp" />
+    <ClCompile Include="RibbonBar\XRibbonBar.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Template.cpp" />
+    <ClCompile Include="TemplateDoc.cpp" />
+    <ClCompile Include="TemplateView.cpp" />
+    <ClCompile Include="TranslationManage\XDelegateTranslationManage.cpp" />
+    <ClCompile Include="TranslationManage\XTranslationManage.cpp" />
+    <ClCompile Include="UserManage\XDelegateUserManage.cpp" />
+    <ClCompile Include="ChildDlg\XLoginLoad\XLoginLoad.cpp" />
+    <ClCompile Include="ChildDlg\XLogin\XDelegateLogin.cpp" />
+    <ClCompile Include="ChildDlg\XLogin\XLogin.cpp" />
+    <ClCompile Include="Result\XPower.cpp" />
+    <ClCompile Include="ChildDlg\XPowerManage\XDelegatePowerManage.cpp" />
+    <ClCompile Include="UserManage\Info\XPowerListInfo.cpp" />
+    <ClCompile Include="ChildDlg\XPowerManage\XPowerManage.cpp" />
+    <ClCompile Include="UserManage\Info\XStoreListInfo.cpp" />
+    <ClCompile Include="UserManage\Info\XSubUserInfo.cpp" />
+    <ClCompile Include="UserManage\XUserManage.cpp" />
+    <ClCompile Include="ChildDlg\XAddUser\XDelegateAddUser.cpp" />
+    <ClCompile Include="ChildDlg\XAddUser\XAddUser.cpp" />
+    <ClCompile Include="ChildDlg\XNodeLoginUser\XNodeLoginUser.cpp" />
+    <ClCompile Include="LeftWnd\XDelegateLeftWnd.cpp" />
+    <ClCompile Include="VideoPlayer\VideoPlayerConstant.cpp" />
+    <ClCompile Include="VideoPlayer\XCaculateMultiVideoWindow.cpp" />
+    <ClCompile Include="VideoPlayer\XMultiVideoWindow.cpp" />
+    <ClCompile Include="VideoPlayer\XMultiVideoWindowFrame.cpp" />
+    <ClCompile Include="VideoPlayer\XMultiVideoWindowFrames.cpp" />
+    <ClCompile Include="VideoPlayer\XRTSP.cpp" />
+    <ClCompile Include="VideoPlayer\XRTSPHWND.cpp" />
+    <ClCompile Include="VideoPlayer\XRTSPInfo.cpp" />
+    <ClCompile Include="VideoPlayer\XVideoPlayer.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\Info\XNodeGroupInfo.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\Info\XOutResoluation.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\Info\XUserLogStatus.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XBaseNodeManage.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XCaculateNodeManage.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XDelegateNodeManage.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XDrawNodeManage.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XNode.cpp" />
+    <ClCompile Include="Constant\XConstantData.cpp" />
+    <ClCompile Include="ChildDlg\XSeatArageName\XSeatArrageName.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XNodePage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\Info\XSeatSceneInfo.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XScreen.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XBaseSeatArrageManage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XCaculateSeatArrageManage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XDelegateSeatArrageManage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XDrawSeatArrageManage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XPage.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeat.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeatArrageData.cpp" />
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeatArrageManage.cpp" />
+    <ClCompile Include="ChildDlg\XAlterUser\XAlterUser.cpp" />
+    <ClCompile Include="ChildDlg\XBackGround\XBackGround.cpp" />
+    <ClCompile Include="ChildDlg\XMenuInfo\XDelegateMenuInfo.cpp" />
+    <ClCompile Include="ChildDlg\XAlterGroup\XAlterGroup.cpp" />
+    <ClCompile Include="ChildDlg\XAddGroup\XAddGroup.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\Info\XChannel.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XColumnChart.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XChart.cpp" />
+    <ClCompile Include="ChildDlg\XCopyUser\XDelegateCopyUser.cpp" />
+    <ClCompile Include="ChildDlg\XAddStore\XAddStore.cpp" />
+    <ClCompile Include="ChildDlg\XAddStore\XDelegateAddStore.cpp" />
+    <ClCompile Include="ChildDlg\XCenterControl\XCenterControl.cpp" />
+    <ClCompile Include="ChildDlg\XCenterControl\XColorWnd.cpp" />
+    <ClCompile Include="Scene\XDelegateScene.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XBaseMatrixManage.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XDelegateMatrixManage.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XCaculateMatrixManage.cpp" />
+    <ClCompile Include="ChildDlg\XLog\XDelegateLog.cpp" />
+    <ClCompile Include="ChildDlg\XUpdate\XDelegateUpdate.cpp" />
+    <ClCompile Include="StatusBar\XDelegateStatusBar.cpp" />
+    <ClCompile Include="ChildDlg\XFolder\XChildInfo.cpp" />
+    <ClCompile Include="ChildDlg\XFolder\XAddFolder.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XBaseSplitManage.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XDelegateSplitManage.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XCaculateSplitManage.cpp" />
+    <ClCompile Include="ChildDlg\AddSplit\XAddSplit.cpp" />
+    <ClCompile Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.cpp" />
+    <ClCompile Include="XDelegateView.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XNodeManage.cpp" />
+    <ClCompile Include="ViewManage\XBaseViewManage.cpp" />
+    <ClCompile Include="ViewManage\XDelegateBaseViewManage.cpp" />
+    <ClCompile Include="DataManage\XDelegateReciveDataManage.cpp" />
+    <ClCompile Include="DataManage\XDelegateSendDataManage.cpp" />
+    <ClCompile Include="DataManage\XReciveDataManage.cpp" />
+    <ClCompile Include="DataManage\XSendDataManage.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceNet\XDeviceNet.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XArragePageOne.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XArragePageTwo.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XTree.cpp" />
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XPropSheet.cpp" />
+    <ClCompile Include="ChildDlg\XScreenArray\XScreenArray.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XNodeAll.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XProgressBar.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPiechart.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPercentage.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XString.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XInserument.cpp" />
+    <ClCompile Include="Result\XSystemStatus.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPieChartInfo.cpp" />
+    <ClCompile Include="Result\XStoreList.cpp" />
+    <ClCompile Include="NetManage\XNetConfig.cpp" />
+    <ClCompile Include="Scene\XScene.cpp" />
+    <ClCompile Include="Scene\XSceneTree.cpp" />
+    <ClCompile Include="ChildDlg\XSaveScene\XSaveScene.cpp" />
+    <ClCompile Include="Scene\XSceneData.cpp" />
+    <ClCompile Include="Scene\XScenePaneData.cpp" />
+    <ClCompile Include="Scene\XSceneInfo.cpp" />
+    <ClCompile Include="Scene\XSceneGroupInfo.cpp" />
+    <ClCompile Include="ChildDlg\XLog\XLog.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XMatrixManage.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XDrawMatrixManage.cpp" />
+    <ClCompile Include="ViewManage\Matrix\XMatrixScreen.cpp" />
+    <ClCompile Include="ChildDlg\XLog\XLogInfo.cpp" />
+    <ClCompile Include="Result\XLogPack.cpp" />
+    <ClCompile Include="ChildDlg\XMatrixArray\XMatrixArray.cpp" />
+    <ClCompile Include="Result\XNodeStatus.cpp" />
+    <ClCompile Include="ChildDlg\XUpdate\XUpdate.cpp" />
+    <ClCompile Include="StatusBar\XStatusBar.cpp" />
+    <ClCompile Include="ChildDlg\XPowerManage\XPrivilege.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\Info\XKeyValue.cpp" />
+    <ClCompile Include="ChildDlg\XBase\XThemeGroupBox.cpp" />
+    <ClCompile Include="ChildDlg\XFolder\XFolder.cpp" />
+    <ClCompile Include="Result\XFolderResult.cpp" />
+    <ClCompile Include="ChildDlg\XFolder\XFolderInfo.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSplitManage.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XDrawSplitManage.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSplitScreen.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSplitSignal.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSignal.cpp" />
+    <ClCompile Include="Result\XSplitResult.cpp" />
+    <ClCompile Include="Result\XSplitWindow.cpp" />
+    <ClCompile Include="Result\XSplitSceneResult.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSplitScene.cpp" />
+    <ClCompile Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Template.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\add.ico" />
+    <Image Include="res\control.ico" />
+    <Image Include="res\folder.ico" />
+    <Image Include="res\icon3.ico" />
+    <Image Include="res\level.ico" />
+    <Image Include="res\log.ico" />
+    <Image Include="res\mgroup.ico" />
+    <Image Include="res\savescene.ico" />
+    <Image Include="res\signalModel.ico" />
+    <Image Include="res\top.ico" />
+    <Image Include="res\update.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Template.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

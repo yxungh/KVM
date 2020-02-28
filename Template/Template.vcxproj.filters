@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\file_view.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\file_view_hc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\class_view.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\class_view_hc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\fileview.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\fileview_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\classview.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\classview_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\explorer.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\explorer_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\menuimages.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\menuimages_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\output_wnd.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\output_wnd_hc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties_wnd.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties_wnd_hc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Template.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\TemplateDoc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Template.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="JsonManage\json_internalarray.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="JsonManage\json_internalmap.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="JsonManage\json_valueiterator.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="JsonManage\sconscript" />
+    <None Include="res\login.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Login_1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Power.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\out.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\login64.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\power64.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\out64.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\user.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\image.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\group.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\node.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\node_1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\save.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\send.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\scene.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\clear.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\input.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\output.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\theme.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\langue.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zoom.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\kvm.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\about.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\up.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bg.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\seat.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\arrage.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\net.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\open.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\close.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\array.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Template.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateDoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RibbonBar\XDelegateRibbonBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RibbonBar\XRibbonBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RibbonBarManage\XBaseRibbonBarManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RibbonBarManage\XDelegateRibbonBarManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RibbonBarManage\XRibbonBarManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalManage\XBaseInternalManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalManage\XDelegateInternalManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalManage\XInternalManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TranslationManage\XTranslationManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\HandleIni.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\HandlePath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\XConstant.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TranslationManage\XDelegateTranslationManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IniManage\XIniManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IniManage\XDelegateIniManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\HandleCalculate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XBaseNetManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XDelegateNetManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XNetManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XSocketUDP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManage\XDelegateReciveDataManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManage\XDelegateSendDataManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManage\XReciveDataManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManage\XSendDataManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\autolink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\features.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\forwards.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\json.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\json_batchallocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\reader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\value.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonManage\XJsonManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBox\XMessageBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBox\XMessageBoxDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\XUserManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\XDelegateUserManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\XHandleVerification.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListCtrl\XListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ListCtrl\XSetListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\HandlePower.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLogin\XDelegateLogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLogin\XLogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XPowerManage\XDelegatePowerManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XPowerManage\XPowerManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAddUser\XAddUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAddUser\XDelegateAddUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XPowerManage\XPowerSelectInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XCopyUser\XCopyUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\Info\XSubUserInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\Info\XStoreListInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\Info\XPowerListInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\XBaseViewManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\XDelegateBaseViewManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XDelegateNodeManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XNodeManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XBaseNodeManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XDelegateView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XCaculateNodeManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XDrawNodeManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManage\XData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperitesWnd\XPropertiesWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperitesWnd\XDelegatePropertiesWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperitesWnd\XPropertyGrid.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperitesWnd\XProprtyGridFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\Info\XUserLogStatus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftWnd\XDelegateLeftWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftWnd\XLeftWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftWnd\XTreeCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\Info\XOutResoluation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftWnd\XDragWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\XConstantData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XImage\XDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XNodeLoginUser\XDelegateNodeLoginUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XNodeLoginUser\XNodeLoginUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlterNodeName\XAlterName.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XImage\XImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XOSDImage\XBaseMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XOSDImage\XDelegateBaseMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XImagePreview\XImagePreview.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XImagePreview\XDelegateImagePreview.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Button\XBtn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XImage\XDelegateImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperssCtrl\XProgressCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeatArrageManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XDelegateSeatArrageManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XBaseSeatArrageManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XDrawSeatArrageManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalManage\XTabCtrl\XTabCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XCaculateSeatArrageManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XAlterNodeName.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XDevicePara.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XLoginInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XNodeConnect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XNodeInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XNodeLogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XOSDImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XPower.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XTakeOver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XUpdateUserInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XSeatArrageData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatArageName\XSeatArrageName.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\Info\XSeatSceneInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\Info\XNodeGroupInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\XDelegateConstantData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XNodeGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\ABout\About.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlterUser\XAlterUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlterUser\XDelegateAlterUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\videoinc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\VideoPlayerConstant.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XRTSP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XRTSPHWND.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XRTSPInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XVideoPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XMultiVideoWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XMultiVideoWindowFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XMultiVideoWindowFrames.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\XHandleCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoPlayer\XCaculateMultiVideoWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBackGround\XBackGround.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Handle\FileHandle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBackGround\XDelegateBackGround.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SeatArrangeManage\XScreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceNet\XDeviceNet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceNet\XDelegateDeviceNet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XNodePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XMenuInfo\XDelegateMenuInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XMenuInfo\XMenuWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLoginLoad\XLoginLoad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatMap\XSeatMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatArrage\XSeatArrage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatDraw\XSeatDraw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlign\XBaseWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlign\XAlign.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatImage\XSeatImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSeatImage\XDelegateSeatImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XScreenInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XPropSheet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XArragePageOne.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XArragePageTwo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XDelegateArragePageOne.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSetScreenArrage\XDelegateArragePageTwo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAlterGroup\XAlterGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAddGroup\XAddGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XScreenArray\XScreenArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XNodeAll.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\Info\XChannel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XColumnChart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XChart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XProgressBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPiechart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPercentage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XCopyUser\XDelegateCopyUser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XInserument.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSystemStatus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XChart\XPieChartInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XStoreList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAddStore\XAddStore.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XAddStore\XDelegateAddStore.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CatchError\CatchError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XNetConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XCenterControl\XCenterControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XCenterControl\XColorWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XDelegateScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XSceneTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSaveScene\XSaveScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XSceneData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XScenePaneData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XSceneInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\XSceneGroupInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLog\XLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XMatrixManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XDelegateMatrixManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XBaseMatrixManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XDrawMatrixManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XCaculateMatrixManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\Matrix\XMatrixScreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLog\XLogInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XLog\XDelegateLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XLogPack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XMatrixArray\XMatrixArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XNodeStatus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XUpdate\XUpdate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetManage\XSocketTCP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XUpdate\XDelegateUpdate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBar\XStatusBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBar\XDelegateStatusBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XPowerManage\XPrivilege.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProperitesWnd\XPropertyGridCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\Info\XKeyValue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBase\XBaseDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBase\XThemeColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBase\XThemeText.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBase\XThemeBtn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XBase\XThemeGroupBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XFolder\XFolder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XFolder\XStoreTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XFolderResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XFolder\XChildInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XFolder\XFolderInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XFolder\XAddFolder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XBaseSplitManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSplitManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XDelegateSplitManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XDrawSplitManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XCaculateSplitManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSplitScreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSplitSignal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\AddSplit\XAddSplit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSignal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSplitResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSplitWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSplitSceneResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSplitScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Template.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateDoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RibbonBar\XDelegateRibbonBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RibbonBar\XRibbonBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RibbonBarManage\XBaseRibbonBarManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RibbonBarManage\XDelegateRibbonBarManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RibbonBarManage\XRibbonBarManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalManage\XBaseInternalManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalManage\XDelegateInternalManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalManage\XInternalManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TranslationManage\XTranslationManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\HandleIni.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\HandlePath.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Constant\XConstant.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TranslationManage\XDelegateTranslationManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IniManage\XIniManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IniManage\XDelegateIniManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\HandleCalculate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XBaseNetManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XDelegateNetManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XNetManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XSocketUDP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManage\XDelegateReciveDataManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManage\XDelegateSendDataManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManage\XReciveDataManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManage\XSendDataManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonManage\json_reader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonManage\json_value.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonManage\json_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonManage\XJsonManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBox\XMessageBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBox\XMessageBoxDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\XUserManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\XDelegateUserManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\XHandleVerification.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListCtrl\XListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ListCtrl\XSetListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\HandlePower.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLogin\XDelegateLogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLogin\XLogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XPowerManage\XDelegatePowerManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XPowerManage\XPowerManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAddUser\XAddUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAddUser\XDelegateAddUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XPowerManage\XPowerSelectInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XCopyUser\XCopyUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\Info\XSubUserInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\Info\XStoreListInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\Info\XPowerListInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\XBaseViewManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\XDelegateBaseViewManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XDelegateNodeManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XNodeManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XBaseNodeManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XDelegateView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XCaculateNodeManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XDrawNodeManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManage\XData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperitesWnd\XPropertiesWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperitesWnd\XDelegatePropertiesWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperitesWnd\XPropertyGrid.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperitesWnd\XProprtyGridFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\Info\XUserLogStatus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftWnd\XDelegateLeftWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftWnd\XLeftWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftWnd\XTreeCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\Info\XOutResoluation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftWnd\XDragWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Constant\XConstantData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XImage\XDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XNodeLoginUser\XDelegateNodeLoginUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XNodeLoginUser\XNodeLoginUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlterNodeName\XAlterName.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XImage\XImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XOSDImage\XBaseMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XOSDImage\XDelegateBaseMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XImagePreview\XImagePreview.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XImagePreview\XDelegateImagePreview.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Button\XBtn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XImage\XDelegateImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperssCtrl\XProgressCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeatArrageManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XDelegateSeatArrageManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XBaseSeatArrageManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XDrawSeatArrageManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalManage\XTabCtrl\XTabCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XCaculateSeatArrageManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XAlterNodeName.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XDevicePara.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XLoginInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XMatrix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XNodeConnect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XNodeInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XNodeLogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XOSDImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XPower.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XTakeOver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XUpdateUserInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XSeatArrageData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatArageName\XSeatArrageName.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\Info\XSeatSceneInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\Info\XNodeGroupInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Constant\XDelegateConstantData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XNodeGroup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\ABout\About.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlterUser\XAlterUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlterUser\XDelegateAlterUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\VideoPlayerConstant.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XRTSP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XRTSPHWND.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XRTSPInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XVideoPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XMultiVideoWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XMultiVideoWindowFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XMultiVideoWindowFrames.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\XHandleCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoPlayer\XCaculateMultiVideoWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBackGround\XBackGround.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Handle\FileHandle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBackGround\XDelegateBackGround.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SeatArrangeManage\XScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceNet\XDeviceNet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceNet\XDelegateDeviceNet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XNodePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XMenuInfo\XDelegateMenuInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XMenuInfo\XMenuWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLoginLoad\XLoginLoad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatMap\XSeatMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatArrage\XSeatArrage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatDraw\XSeatDraw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlign\XBaseWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlign\XAlign.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatImage\XSeatImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSeatImage\XDelegateSeatImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XScreenInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XPropSheet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XArragePageOne.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XArragePageTwo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XDelegateArragePageOne.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSetScreenArrage\XDelegateArragePageTwo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAlterGroup\XAlterGroup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAddGroup\XAddGroup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XScreenArray\XScreenArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XNodeAll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\Info\XChannel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XColumnChart.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XChart.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XProgressBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPiechart.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPercentage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XCopyUser\XDelegateCopyUser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XInserument.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSystemStatus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XChart\XPieChartInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XStoreList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAddStore\XAddStore.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XAddStore\XDelegateAddStore.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CatchError\CatchError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XNetConfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XCenterControl\XCenterControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XCenterControl\XColorWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XDelegateScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XSceneTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSaveScene\XSaveScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XSceneData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XScenePaneData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XSceneInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\XSceneGroupInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLog\XLog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XMatrixManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XDelegateMatrixManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XBaseMatrixManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XDrawMatrixManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XCaculateMatrixManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\Matrix\XMatrixScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLog\XLogInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XLog\XDelegateLog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XLogPack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XMatrixArray\XMatrixArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XNodeStatus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XUpdate\XUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetManage\XSocketTCP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XUpdate\XDelegateUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBar\XStatusBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBar\XDelegateStatusBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XPowerManage\XPrivilege.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProperitesWnd\XPropertyGridCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\Info\XKeyValue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBase\XBaseDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBase\XThemeColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBase\XThemeText.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBase\XThemeBtn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XBase\XThemeGroupBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XFolder\XFolder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XFolder\XStoreTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XFolderResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XFolder\XChildInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XFolder\XFolderInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XFolder\XAddFolder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XBaseSplitManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSplitManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XDelegateSplitManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XDrawSplitManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XCaculateSplitManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSplitScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSplitSignal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\AddSplit\XAddSplit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSignal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSplitResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSplitWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSplitSceneResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSplitScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Template.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\mgroup.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\control.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\savescene.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\log.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\update.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon3.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\folder.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\add.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\level.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\signalModel.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\top.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
