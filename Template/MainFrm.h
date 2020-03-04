@@ -178,6 +178,13 @@ protected:
 	afx_msg void OnMenuDown();
 	afx_msg void OnMenuTop();
 	afx_msg void OnMenuBottom();
+	afx_msg void OnMenuFullSceeen();
+	afx_msg void OnMenuRestore();
+	afx_msg void OnMenuExtend();
+	afx_msg void OnMenuCloseSignal();
+
+
+
 	//Ìí¼ÓÄ£Ê½
 	//afx_msg void OnAddModel();
 	//afx_msg void OnUpdateAddModel(CCmdUI *pCmdUI);

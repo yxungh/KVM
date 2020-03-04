@@ -720,7 +720,7 @@ void XSplitManage::ResetView()
 
 void XSplitManage::SetFull()
 {
-	//占用面积全屏
+	//占用分块面积 对应扩展
 	if(NULL==m_pTempSignal)
 		return;
 
@@ -733,8 +733,14 @@ void XSplitManage::SetFull()
 
 }
 
+void XSplitManage::OperateOfExtend()
+{
+	//扩展
+}
+
 void XSplitManage::SetMax()
 {
+	//全屏 对应全屏
 	if(NULL==m_pTempSignal)
 		return;
 	RECTF rectAllScreen=XCaculateSplitManage::CalculateInsertScreenRect(m_VecSplitScreen);
@@ -746,8 +752,15 @@ void XSplitManage::SetMax()
 	m_pTempSignal->SetRect(rectAllScreen);
 }
 
+void XSplitManage::OperateOfFullScreen()
+{
+	//全屏
+
+}
+
 void XSplitManage::SetMin()
 {
+	//还原为原来区域  对应还原
 	if(NULL==m_pTempSignal)
 		return;
 
@@ -759,6 +772,12 @@ void XSplitManage::SetMin()
 
 	m_pTempSignal->SetRect(m_pTempSignal->GetMainRect());
 }
+
+void XSplitManage::OperateOfRestore()
+{
+	//还原
+}
+
 
 void XSplitManage::ShowMenu()
 {
@@ -790,6 +809,12 @@ void XSplitManage::DeleteSignalByID(int nID)
 
 	m_pTempSignal=NULL;
 	InvalidateView();
+}
+
+void XSplitManage::OperateOfCloseSignal()
+{
+	//关闭信号
+	CloseSignal(m_pTempSignal->GetSignalID());
 }
 
 void XSplitManage::CloseSignal(int nID)
@@ -1365,6 +1390,26 @@ void XSplitManage::Operate(OPERATETYPE type,void* pData)
 			{
 				//清空信号
 				OperateOfClearSignal();
+			}
+			break;
+		case OPERATETYPE_MENUFULLSCREEN:
+			{
+				OperateOfFullScreen();
+			}
+			break;
+		case OPERATETYPE_MENUEXTEND:
+			{		
+				OperateOfExtend();
+			}
+			break;
+		case OPERATETYPE_MENURESTORE:
+			{
+				OperateOfRestore();
+			}
+			break;
+		case OPERATETYPE_MENUCLOSESIGNAL:
+			{
+				OperateOfCloseSignal();
 			}
 			break;
 		case OPERATETYPE_LIMIT:

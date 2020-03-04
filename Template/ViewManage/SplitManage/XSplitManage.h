@@ -119,6 +119,10 @@ private:
 
 	//Çå¿ÕÐÅºÅ
 	void OperateOfClearSignal();
+	void OperateOfFullScreen();
+	void OperateOfRestore();
+	void OperateOfExtend();
+	void OperateOfCloseSignal();
 
 
 public:

@@ -177,6 +177,11 @@ BEGIN_MESSAGE_MAP(CMainFrame,CMDIFrameWndEx)
 	ON_COMMAND(ID_MENU_DOWN,OnMenuDown)
 	ON_COMMAND(ID_MENU_TOP,OnMenuTop)
 	ON_COMMAND(ID_MENU_BOTTOM,OnMenuBottom)
+	ON_COMMAND(ID_MENU_FULLSCREEN,OnMenuFullSceeen)
+	ON_COMMAND(ID_MENU_RESTORE,OnMenuRestore)
+	ON_COMMAND(ID_MENU_EXTEND,OnMenuExtend)
+	ON_COMMAND(ID_MENU_CLOSESIGNAL,OnMenuCloseSignal)
+
 
 	//ON_COMMAND(ID_BTN_ADDMODEL,OnAddModel)
 	//ON_UPDATE_COMMAND_UI(ID_BTN_ADDMODEL,OnUpdateAddModel)
@@ -1171,6 +1176,23 @@ void CMainFrame::OnMenuTop()
 void CMainFrame::OnMenuBottom()
 {
 	m_pBaseInternalManage->Operate(OPERATETYPE_MENUBOTTOM,NULL);
+}
+
+void CMainFrame::OnMenuFullSceeen()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_MENUFULLSCREEN,NULL);
+}
+void CMainFrame::OnMenuRestore()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_MENURESTORE,NULL);
+}
+void CMainFrame::OnMenuExtend()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_MENUEXTEND,NULL);
+}
+void CMainFrame::OnMenuCloseSignal()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_MENUCLOSESIGNAL,NULL);
 }
 
 //void CMainFrame::OnAddModel()

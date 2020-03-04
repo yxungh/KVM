@@ -3040,9 +3040,12 @@ void XJsonManage::ParseJsonToReSplitScene(const char* pData,XInternalManage* pIn
 
 			int nScreenCountH=root["scene_wall_obj"]["screen_num_h"].asInt();
 			pManage->SetScreenCountX(nScreenCountH);
+			TRACE(_T("ScreenH=%d\n"),nScreenCountH);
 
 			int nScreenCountV=root["scene_wall_obj"]["screen_num_v"].asInt();
 			pManage->SetScreenCountY(nScreenCountV);
+			TRACE(_T("ScreenV=%d\n"),nScreenCountV);
+
 
 			auto& VecSplitCh=pManage->GetVecSplitCh();
 			VecSplitCh.clear();
