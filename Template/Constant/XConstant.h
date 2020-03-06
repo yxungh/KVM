@@ -12,6 +12,7 @@ extern const CString APP_DATAFILENAME;
 extern const CString APP_FONT;
 extern const CString FILTER_PHOTO;
 extern const Color g_Color[40];
+extern const CString g_Qustion[20];
 
 
 //消息事件
@@ -216,7 +217,7 @@ constexpr auto ID_MENU_BOTTOM                    =(ID_BEGIN+184);
 constexpr auto ID_BTN_CLEARSIGNAL                =(ID_BEGIN+185);
 constexpr auto ID_BTN_ADDMODEL                   =(ID_BEGIN+186);
 constexpr auto ID_BTN_LIMITMODEL                 =(ID_BEGIN+187);
-constexpr auto ID_MENU_PROPERTY                  =(ID_BEGIN+188);
+constexpr auto ID_MENU_SPROPERTY                 =(ID_BEGIN+188);
 constexpr auto ID_MENU_QUICKTOP                  =(ID_BEGIN+189);
 constexpr auto ID_MENU_FULLSCREEN                =(ID_BEGIN+190);
 constexpr auto ID_MENU_RESTORE                   =(ID_BEGIN+191);
@@ -228,79 +229,80 @@ constexpr auto ID_ALTERSPLITSCENE                =(ID_BEGIN+196);
 constexpr auto ID_REMOVEFROMSGROUP               =(ID_BEGIN+197);
 constexpr auto ID_ALTERSPLITGROUP                =(ID_BEGIN+198);
 constexpr auto ID_DELSPLITGROUP                  =(ID_BEGIN+199);
+constexpr auto IDC_BTN_SECURITY                  =(ID_BEGIN+200);
+constexpr auto ID_BTN_DEVICECONN                 =(ID_BEGIN+201);
 
 
 
 
-constexpr auto ID_NODEID                         =(ID_BEGIN+200);
-constexpr auto ID_NODENAME                       =(ID_BEGIN+201);
-constexpr auto ID_NODECHANNEL					 =(ID_BEGIN+202);
-constexpr auto ID_NODETYPE						 =(ID_BEGIN+203);
-constexpr auto ID_NODEGROUP					     =(ID_BEGIN+204);
-constexpr auto ID_NODEMASTER					 =(ID_BEGIN+205);
-constexpr auto ID_NODECONTROL					 =(ID_BEGIN+206);
-constexpr auto ID_NODENO						 =(ID_BEGIN+207);
-constexpr auto ID_NODELOGIN					     =(ID_BEGIN+208);
-constexpr auto ID_NODELOGINUSER				     =(ID_BEGIN+209);
-constexpr auto ID_LOGINIP						 =(ID_BEGIN+210);
-constexpr auto ID_LOGINPORT					     =(ID_BEGIN+211);
-constexpr auto ID_TAKEOVERMODEL				     =(ID_BEGIN+212);
-constexpr auto ID_TAKEOVERNODE					 =(ID_BEGIN+213);
-constexpr auto ID_TARGETNODE					 =(ID_BEGIN+214);
-constexpr auto ID_PREVIEW						 =(ID_BEGIN+215);
-constexpr auto ID_PREVIEWTARGET				     =(ID_BEGIN+216);
-constexpr auto ID_NODEINHASSIGNAL				 =(ID_BEGIN+217);
-constexpr auto ID_AUDIOMODEL					 =(ID_BEGIN+218);
-constexpr auto ID_RESOLUATION					 =(ID_BEGIN+219);
-constexpr auto ID_OUTMODEL						 =(ID_BEGIN+220);
-constexpr auto ID_MATRIX						 =(ID_BEGIN+221);
-constexpr auto ID_OSDIMAGE						 =(ID_BEGIN+222);
-constexpr auto ID_SEATNAME                       =(ID_BEGIN+223);
-constexpr auto ID_SEATROW                        =(ID_BEGIN+224);
-constexpr auto ID_SEATCOLUMN                     =(ID_BEGIN+225);
-constexpr auto ID_SEATMODEL                      =(ID_BEGIN+226);
-constexpr auto ID_SEATCOLOR                      =(ID_BEGIN+227);
-constexpr auto ID_SEATBG                         =(ID_BEGIN+228);
-constexpr auto ID_SEATPIC                        =(ID_BEGIN+229);
-constexpr auto ID_SEATRECTX                      =(ID_BEGIN+230);
-constexpr auto ID_SEATRECTY                      =(ID_BEGIN+231);
-constexpr auto ID_SEATRECTW                      =(ID_BEGIN+232);
-constexpr auto ID_SEATRECTH                      =(ID_BEGIN+233);
-constexpr auto ID_SEATTRANS                      =(ID_BEGIN+234);
-constexpr auto ID_HIDMODEL                       =(ID_BEGIN+235);
-constexpr auto ID_SPLITSCREEN                    =(ID_BEGIN+236);
-constexpr auto ID_AUDIOSRC                       =(ID_BEGIN+237);
-constexpr auto ID_BINDCFG                        =(ID_BEGIN+238);
-constexpr auto ID_BINDNODEID                     =(ID_BEGIN+239);
-constexpr auto ID_HOTKEY1                        =(ID_BEGIN+240);
-constexpr auto ID_HOTKEY2                        =(ID_BEGIN+241);
-constexpr auto ID_HOTKEY3                        =(ID_BEGIN+242);
-constexpr auto ID_HOTKEY4                        =(ID_BEGIN+243);
-constexpr auto ID_FUNCTION1                      =(ID_BEGIN+244);
-constexpr auto ID_VALUE1                         =(ID_BEGIN+245);
-constexpr auto ID_FUNCTION2                      =(ID_BEGIN+246);
-constexpr auto ID_VALUE2                         =(ID_BEGIN+247);
-constexpr auto ID_FUNCTION3                      =(ID_BEGIN+248);
-constexpr auto ID_VALUE3                         =(ID_BEGIN+249);
-constexpr auto ID_ENABLE1                        =(ID_BEGIN+250);
-constexpr auto ID_ENABLE2                        =(ID_BEGIN+251);
-constexpr auto ID_ENABLE3                        =(ID_BEGIN+252);
-constexpr auto ID_RECOVER                        =(ID_BEGIN+253);
+constexpr auto ID_NODEID                         =(ID_BEGIN+400);
+constexpr auto ID_NODENAME                       =(ID_BEGIN+401);
+constexpr auto ID_NODECHANNEL					 =(ID_BEGIN+402);
+constexpr auto ID_NODETYPE						 =(ID_BEGIN+403);
+constexpr auto ID_NODEGROUP					     =(ID_BEGIN+404);
+constexpr auto ID_NODEMASTER					 =(ID_BEGIN+405);
+constexpr auto ID_NODECONTROL					 =(ID_BEGIN+406);
+constexpr auto ID_NODENO						 =(ID_BEGIN+407);
+constexpr auto ID_NODELOGIN					     =(ID_BEGIN+408);
+constexpr auto ID_NODELOGINUSER				     =(ID_BEGIN+409);
+constexpr auto ID_LOGINIP						 =(ID_BEGIN+410);
+constexpr auto ID_LOGINPORT					     =(ID_BEGIN+411);
+constexpr auto ID_TAKEOVERMODEL				     =(ID_BEGIN+412);
+constexpr auto ID_TAKEOVERNODE					 =(ID_BEGIN+413);
+constexpr auto ID_TARGETNODE					 =(ID_BEGIN+414);
+constexpr auto ID_PREVIEW						 =(ID_BEGIN+415);
+constexpr auto ID_PREVIEWTARGET				     =(ID_BEGIN+416);
+constexpr auto ID_NODEINHASSIGNAL				 =(ID_BEGIN+417);
+constexpr auto ID_AUDIOMODEL					 =(ID_BEGIN+418);
+constexpr auto ID_RESOLUATION					 =(ID_BEGIN+419);
+constexpr auto ID_OUTMODEL						 =(ID_BEGIN+420);
+constexpr auto ID_MATRIX						 =(ID_BEGIN+421);
+constexpr auto ID_OSDIMAGE						 =(ID_BEGIN+422);
+constexpr auto ID_SEATNAME                       =(ID_BEGIN+423);
+constexpr auto ID_SEATROW                        =(ID_BEGIN+424);
+constexpr auto ID_SEATCOLUMN                     =(ID_BEGIN+425);
+constexpr auto ID_SEATMODEL                      =(ID_BEGIN+426);
+constexpr auto ID_SEATCOLOR                      =(ID_BEGIN+427);
+constexpr auto ID_SEATBG                         =(ID_BEGIN+428);
+constexpr auto ID_SEATPIC                        =(ID_BEGIN+429);
+constexpr auto ID_SEATRECTX                      =(ID_BEGIN+430);
+constexpr auto ID_SEATRECTY                      =(ID_BEGIN+431);
+constexpr auto ID_SEATRECTW                      =(ID_BEGIN+432);
+constexpr auto ID_SEATRECTH                      =(ID_BEGIN+433);
+constexpr auto ID_SEATTRANS                      =(ID_BEGIN+434);
+constexpr auto ID_HIDMODEL                       =(ID_BEGIN+435);
+constexpr auto ID_SPLITSCREEN                    =(ID_BEGIN+436);
+constexpr auto ID_AUDIOSRC                       =(ID_BEGIN+437);
+constexpr auto ID_BINDCFG                        =(ID_BEGIN+438);
+constexpr auto ID_BINDNODEID                     =(ID_BEGIN+439);
+constexpr auto ID_HOTKEY1                        =(ID_BEGIN+440);
+constexpr auto ID_HOTKEY2                        =(ID_BEGIN+441);
+constexpr auto ID_HOTKEY3                        =(ID_BEGIN+442);
+constexpr auto ID_HOTKEY4                        =(ID_BEGIN+443);
+constexpr auto ID_FUNCTION1                      =(ID_BEGIN+444);
+constexpr auto ID_VALUE1                         =(ID_BEGIN+445);
+constexpr auto ID_FUNCTION2                      =(ID_BEGIN+446);
+constexpr auto ID_VALUE2                         =(ID_BEGIN+447);
+constexpr auto ID_FUNCTION3                      =(ID_BEGIN+448);
+constexpr auto ID_VALUE3                         =(ID_BEGIN+449);
+constexpr auto ID_ENABLE1                        =(ID_BEGIN+450);
+constexpr auto ID_ENABLE2                        =(ID_BEGIN+451);
+constexpr auto ID_ENABLE3                        =(ID_BEGIN+452);
+constexpr auto ID_RECOVER                        =(ID_BEGIN+453);
 
 
 
 
 																
-constexpr auto ID_NODEGROUPID					 =(ID_BEGIN+300);
-constexpr auto ID_NODEGROUPNAME				     =(ID_BEGIN+301);
-constexpr auto ID_NODEGROUPMASTER				 =(ID_BEGIN+302);
-constexpr auto ID_NODEGROUPMATRIX				 =(ID_BEGIN+303);
-constexpr auto ID_NODEGROUPCREATOR				 =(ID_BEGIN+304);
-
-constexpr auto ID_MAINSECGROUPNAME               =(ID_BEGIN+305);
-constexpr auto ID_MAINSECGROUPID                 =(ID_BEGIN+306);
-constexpr auto ID_MAINSECGROUPMASTER             =(ID_BEGIN+307);
-constexpr auto ID_MAINSECGROUPMATRIX             =(ID_BEGIN+308);
+constexpr auto ID_NODEGROUPID					 =(ID_BEGIN+600);
+constexpr auto ID_NODEGROUPNAME				     =(ID_BEGIN+601);
+constexpr auto ID_NODEGROUPMASTER				 =(ID_BEGIN+602);
+constexpr auto ID_NODEGROUPMATRIX				 =(ID_BEGIN+603);
+constexpr auto ID_NODEGROUPCREATOR				 =(ID_BEGIN+604);
+constexpr auto ID_MAINSECGROUPNAME               =(ID_BEGIN+605);
+constexpr auto ID_MAINSECGROUPID                 =(ID_BEGIN+606);
+constexpr auto ID_MAINSECGROUPMASTER             =(ID_BEGIN+607);
+constexpr auto ID_MAINSECGROUPMATRIX             =(ID_BEGIN+608);
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -400,12 +402,14 @@ enum OPERATETYPE//操作类型
 	OPERATETYPE_UPDATE,//升级
 	OPERATETYPE_FOLDER,//文件夹
 	OPERATETYPE_REROOTFOLDER,//返回文件夹
+	OPERATETYPE_SECURITY,
 
 	OPERATETYPE_LOGIN,//登录
 	OPERATETYPE_LOGINOUT,//注销
 
 	OPERATETYPE_POWER,//权限
 	OPERATETYPE_REPOWER,
+	OPERATETYPE_REUSERSECURITY,//用户安全信息
 
 	OPERATETYPE_RELOGIN,//登录
 	OPERATETYPE_RELOGINOUT,
@@ -499,6 +503,10 @@ enum OPERATETYPE//操作类型
 	OPERATETYPE_CLEARSPLITVIEW,
 	OPERATETYPE_SPLITSCENE,//获取拼接场景
 	OPERATETYPE_RESPLITSCENE,
+	OPERATETYPE_RESPLITINPUT,//返回获取拼接输入
+
+		OPERATETYPE_REASSERVER,
+		OPERATETYPE_REASCLIENT,//返回作为客户端
 
 
 	OPERATETYPE_OPENTAKEOVERSCENE,//调用接管场景
@@ -556,6 +564,7 @@ enum OPERATETYPE//操作类型
 	OPERATETYPE_MENUEXTEND,
 	OPERATETYPE_MENURESTORE,
 	OPERATETYPE_MENUCLOSESIGNAL,
+		OPERATETYPE_SPROPERTY,
 
 	OPERATETYPE_LIMIT,
 	OPERATETYPE_DELTOP,
@@ -568,6 +577,7 @@ enum OPERATETYPE//操作类型
 	OPERATETYPE_QUICKTOP,
 
 	OPERATETYPE_SAVESPLITSCENE,
+		OPERATETYPE_DEVICECONN,
 
 	OPERATETYPE_NULL
 };
@@ -596,6 +606,7 @@ enum CMDUITYPE
 	CMDUITYPE_LOG,//日志
 	CMDUITYPE_UPDATE,//升级
 	CMDUITYPE_FOLDER,//文件夹
+	CMDUITYPE_SECURITY,//安全中心
 
 	CMDUITYPE_ADDMODEL=150,//开窗添加模式 //不能变
 	
@@ -609,6 +620,7 @@ enum CMDUITYPE
 
 	CMDUITYPE_QUICKTOP,
 	CMDUITYPE_SAVESPLITSCENE,
+	CMDUITYPE_DEVICECONN,
 
 	//////////////////////////////////////////////////////////////////////////
 	//必须与操作保持一致
@@ -693,6 +705,7 @@ typedef enum
 	PROTOCOLTYPE_LOGINOUT,//注销
 	PACKERHEAD_HEART,//心跳
 	PROTOCOLTYPE_OBTAINPOWER,//获取用户权限
+	PROTOCOLTYPE_OBTAINUSERSECURITY,//获取用户安全信息
 	PROTOCOLTYPE_OBTAINUSERLIST,//获取用户列表
 	PROTOCOLTYPE_OBTAINSTORE,//获取收藏列表
 	PROTOCOLTYPE_DELSTORELIST,//删除收藏
@@ -751,6 +764,12 @@ typedef enum
 	PROTOCOLTYPE_OBTIANSPLIT,//获取拼接墙
 	PROTOCOLTYPE_OBTIANSPLITWINDOW,
 	PROTOCOLTYPE_SPLITSCENE,
+
+	PROTOCOLTYPE_SPLITINPUT,
+
+	PROTOCOLTYPE_ASSERVER,//当作服务端
+	PROTOCOLTYPE_ASCLIENT,//当作客户端
+
 
 	PROTOCOLTYPE_NULL
 
@@ -951,6 +970,10 @@ typedef std::map<CString,XPower*> MAP_POWER;
 typedef std::vector<int> VEC_USERALL;
 typedef std::vector<int> VEC_USERIDALL;
 
+//用户安全
+class XUserSecurity;
+typedef std::map<CString,XUserSecurity*> MAP_SECURITY;
+
 //#define MAP_TEMP unordered_map<int,int>
 
 //控制权限
@@ -1115,6 +1138,9 @@ typedef std::vector<XSplitSignal*> VEC_SPLITSIGNAL;
 //拼接场景
 class XSplitScene;
 typedef std::map<CString,XSplitScene*> MAP_SPLITSCENE;
+//拼接输入
+class XSplitInput;
+typedef std::vector<XSplitInput*> VEC_SPLITINPUT;
 
 //class XSplitSceneGroup;
 typedef std::map<CString,HTREEITEM> MAP_SPLITSCENEGROUP;
@@ -1133,3 +1159,11 @@ typedef std::map<int,XSubFolder*> MAP_SUBFOLDERLIST;
 typedef std::map<int,XSubFolder*> MAP_SUBFOLDER;
 
 typedef std::map<int,CString> MAP_TEMPSUBFOLDER;
+
+
+//服务端
+class XClient;
+typedef std::vector<XClient*> VEC_CLIENT;
+
+class XServer;
+typedef std::vector<XServer*> VEC_SERVER;

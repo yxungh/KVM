@@ -30,6 +30,8 @@ class XSignal;
 class XSignalLevel;
 class XSplitSceneResult;
 class XInternalManage;
+class XSplitInputResult;
+class XSecurityResult;
 
 
 
@@ -112,6 +114,12 @@ public:
 
 	void ParseJsonToReSplitScene(const char* pData,XInternalManage* pInternal,XSplitSceneResult& result);
 
+	void ParseJsonToSplitInput(const char* pData,XSplitInputResult& result);
+
+	void ParseJsonToUserSecurity(const char* pData,MAP_SECURITY& MapSecurity,XSecurityResult& result);
+
+	void ParseJsonToAsServer(const char* pData,VEC_CLIENT& VecClient,XResult& result);
+
 public:
 
 	void WriteJsonToLogin(CString& szUserName,CString& szPassWd,CString& szData);
@@ -121,6 +129,8 @@ public:
 	void WriteJsonToObtainAllUser(CString& szData);
 
 	void WriteJsonToObtainPower(CString szUserName,CString &szData);
+
+	void WriteJsonToObtainUserSecurity(CString szUserName,CString &szData,BOOL bCurUser);
 
 	void WriteJsonToObtainSubPower(int nID,CString& szData);
 
@@ -310,6 +320,20 @@ public:
 	void WriteJsonSetSceneGroup(CString& szData,CString szSceneName,CString& szGroup,BOOL bAlter=FALSE);
 
 	void WriteJsonDeleteSplitScene(CString& szData,CString szSceneName);
+
+	void WriteJsonObtainSplitInput(CString& szData);
+
+	void WriteJsonSetUserDefaultSecurity(CString& szData,int nUserID,CString szName,CString szType);
+
+	void WriteJsonToDelUserSecurity(CString& szData,CString szName);
+
+	void WriteJsonAsServer(CString& szData);
+
+	void WriteJsonAsClient(CString& szData);
+
+	void WriteJsonAlterServerPort(CString& szData,CString szIP,int nPort);
+
+
 
 private:
 

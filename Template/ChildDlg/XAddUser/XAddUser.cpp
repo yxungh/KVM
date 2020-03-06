@@ -21,6 +21,7 @@ XAddUser::XAddUser(CWnd* pParent /*=NULL*/)
 
 XAddUser::~XAddUser()
 {
+	//DestroyWindow();
 }
 
 void XAddUser::DoDataExchange(CDataExchange* pDX)
@@ -42,9 +43,14 @@ END_MESSAGE_MAP()
 
 // XAddUser 消息处理程序
 
-void XAddUser::OnOk()
+//void XAddUser::OnOk()
+//{
+//	XBaseDialog::OnOK();
+//}
+
+void XAddUser::CloseDlg()
 {
-	XBaseDialog::OnOK();
+	OnCancel();
 }
 
 BOOL XAddUser::OnInitDialog()
@@ -115,23 +121,23 @@ void XAddUser::OnBnClickedOk()
 		return;
 	}
 
-	if(XHandleVerification::HasChinese(szPassWd))
-	{
-		_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
-		return;
-	}
+	//if(XHandleVerification::HasChinese(szPassWd))
+	//{
+	//	_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
+	//	return;
+	//}
 
-	int nRet=XHandleVerification::VerificationPasswd(szPassWd);
-	if(nRet==1)
-	{
-		_M(_T("320"),_T("密码为字密码至少位4位！"),MB_OK);
-		return;
-	}
-	else if(nRet==2)
-	{
-		_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
-		return;
-	}
+	//int nRet=XHandleVerification::VerificationPasswd(szPassWd);
+	//if(nRet==1)
+	//{
+	//	_M(_T("320"),_T("密码为字密码至少位4位！"),MB_OK);
+	//	return;
+	//}
+	//else if(nRet==2)
+	//{
+	//	_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
+	//	return;
+	//}
 
 	m_pDelegate->SetUserInfo(szUserName,szPassWd);
 	m_pDelegate->AddUser();

@@ -60,6 +60,7 @@ protected:
 	afx_msg void OnBtnLog();
 	afx_msg void OnBtnUpdate();
 	afx_msg void OnBtnFolder();
+	afx_msg void OnBtnSecurity();
 
 	afx_msg void OnBtnArray();
 
@@ -121,6 +122,7 @@ protected:
 	afx_msg void OnUpdataBtnLogin(CCmdUI* pCmdUI);
 	afx_msg void OnUpdataBtnLoginOut(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateBtnFolder(CCmdUI* pCmdUI);
+	afx_msg void OnUpdateBtnSecurity(CCmdUI* pCmdUI);
 	afx_msg void OnUpdataBtnPowerManage(CCmdUI* pCmdUI);
 	afx_msg void OnUpdataBtnOsdImage(CCmdUI* pCmdUI);
 	//afx_msg void OnUpdataBtnControl(CCmdUI* pCmdUI);
@@ -182,7 +184,7 @@ protected:
 	afx_msg void OnMenuRestore();
 	afx_msg void OnMenuExtend();
 	afx_msg void OnMenuCloseSignal();
-
+	afx_msg void OnMenuSignalProperty();
 
 
 	//添加模式
@@ -208,6 +210,9 @@ protected:
 	//保存拼接场景
 	afx_msg void OnBtnSplitScene();
 	afx_msg void OnUpdateSplitScene(CCmdUI *pCmdUI);
+	//设备互联
+	afx_msg void OnBtnDeviceConn();
+	afx_msg void OnUpdateBtnDeviceConn(CCmdUI *pCmdUI);
 
 
 	DECLARE_MESSAGE_MAP()

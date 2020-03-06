@@ -21,6 +21,7 @@ XBaseDialog::XBaseDialog(UINT nIDD,CWnd *pParent)
 
 XBaseDialog::~XBaseDialog()
 {
+	DestroyWindow();
 }
 
 void XBaseDialog::DoDataExchange(CDataExchange* pDX)

@@ -39,6 +39,7 @@ public:
 	BOOL GetCheck();
 	void SetFillColor(Gdiplus::Color col);
 
+
 protected:
 
 	virtual BOOL DrawItem(CDC *pDC);
@@ -47,7 +48,9 @@ protected:
 private:
 
 	void DrawText(Graphics& graphics,CRect& rt);
-	void DrawFillColor(Graphics& graphics,CRect& rt);
+	//void DrawFillColor(Graphics& graphics,CRect& rt);
+
+
 
 protected:
 
@@ -63,6 +66,7 @@ protected:
 	CString m_strText=_T("");
 	//Ìî³äÑÕÉ«
 	Gdiplus::Color m_FillColor;
+
 };
 
 

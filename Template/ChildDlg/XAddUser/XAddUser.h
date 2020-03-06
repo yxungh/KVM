@@ -15,7 +15,7 @@ public:
 	virtual ~XAddUser();
 
 	virtual BOOL OnInitDialog();
-	virtual void OnOk();
+	//virtual void OnOk();
 
 	// 对话框数据
 	enum { IDD = IDD_DIALOG_ADDUSER };
@@ -30,6 +30,8 @@ protected:
 public:
 
 	inline void SetDelegate(XDelegateAddUser* p){m_pDelegate=p;}
+
+	void CloseDlg();
 
 private:
 

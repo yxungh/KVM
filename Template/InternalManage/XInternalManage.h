@@ -412,6 +412,7 @@ private:
 	void OperateOfClearSplitView();
 	void OperateOfObtainSplitScene();
 	void OperateOfReSplitScene(char* pData);
+	void OperateOfReSplitInput(char* pData);
 
 public:
 	void OperateOfAbout();

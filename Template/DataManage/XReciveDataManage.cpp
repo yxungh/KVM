@@ -67,7 +67,11 @@ BOOL XReciveDataManage::HandleUDPData(unsigned char* pData,int nDataLen,SOCKADDR
 	DecodeSplit(pData,nDataLen);
 	DecodeSplitWindow(pData,nDataLen);
 	DecodeSplitScene(pData,nDataLen);
-	
+	DecodeUserSecurity(pData,nDataLen);
+	DecodeAsServer(pData,nDataLen);
+	DecodeAsClient(pData,nDataLen);
+
+
 	return TRUE;
 }
 
@@ -184,6 +188,30 @@ void XReciveDataManage::DecodeStoreList(unsigned char* pData,int nDataLen)
 		m_pDelegate->Operate(OPERATETYPE_RESTORELIST,(char*)pTemp);
 		delete []pTemp;	
 	}	
+}
+
+void XReciveDataManage::DecodeUserSecurity(unsigned char* pData,int nDataLen)
+{
+	if(pData[0]==0xFF&&
+	   pData[1]==0x00&&
+	   pData[4]==0x09&&
+	   pData[5]==0x07)
+	{
+		unsigned char* pTemp=AddDataOfFull(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REUSERSECURITY,(char*)pTemp);
+		delete[]pTemp;
+	}
+	else if(pData[0]==0xFF&&
+			pData[1]==0x01&&
+			pData[8]==0x09&&
+			pData[9]==0x07)
+	{
+		unsigned char* pTemp=AddDataOfPacket(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REUSERSECURITY,(char*)pTemp);
+		delete[]pTemp;
+	}
 }
 
 void XReciveDataManage::DecodeGetDeviceInfo(unsigned char* pData,int nDataLen)
@@ -882,6 +910,77 @@ void XReciveDataManage::DecodeSplitScene(unsigned char* pData,int nDataLen)
 	}
 }
 
+void XReciveDataManage::DecodeSplitInput(unsigned char* pData,int nDataLen)
+{
+	if(pData[0]==0xFF&&
+	   pData[1]==0x00&&
+	   pData[4]==0x04&&
+	   pData[5]==0x0D)
+	{
+		unsigned char* pTemp=AddDataOfFull(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_RESPLITINPUT,(char*)pTemp);
+		delete[]pTemp;
+	}
+	else if(pData[0]==0xFF&&
+			pData[1]==0x01&&
+			pData[8]==0x04&&
+			pData[9]==0x0D)
+	{
+		unsigned char* pTemp=AddDataOfPacket(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_RESPLITINPUT,(char*)pTemp);
+		delete[]pTemp;
+	}
+}
+
+void XReciveDataManage::DecodeAsServer(unsigned char* pData,int nDataLen)
+{
+	if(pData[0]==0xFF&&
+	   pData[1]==0x00&&
+	   pData[4]==0x07&&
+	   pData[5]==0x0A)
+	{
+		unsigned char* pTemp=AddDataOfFull(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REASSERVER,(char*)pTemp);
+		delete[]pTemp;
+	}
+	else if(pData[0]==0xFF&&
+			pData[1]==0x01&&
+			pData[8]==0x07&&
+			pData[9]==0x0A)
+	{
+		unsigned char* pTemp=AddDataOfPacket(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REASSERVER,(char*)pTemp);
+		delete[]pTemp;
+	}
+}
+
+void XReciveDataManage::DecodeAsClient(unsigned char* pData,int nDataLen)
+{
+	if(pData[0]==0xFF&&
+	   pData[1]==0x00&&
+	   pData[4]==0x08&&
+	   pData[5]==0x0A)
+	{
+		unsigned char* pTemp=AddDataOfFull(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REASCLIENT,(char*)pTemp);
+		delete[]pTemp;
+	}
+	else if(pData[0]==0xFF&&
+			pData[1]==0x01&&
+			pData[8]==0x08&&
+			pData[9]==0x0A)
+	{
+		unsigned char* pTemp=AddDataOfPacket(pData,nDataLen);
+
+		m_pDelegate->Operate(OPERATETYPE_REASCLIENT,(char*)pTemp);
+		delete[]pTemp;
+	}
+}
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 unsigned char* XReciveDataManage::AddDataOfFull(unsigned char* pData,int nLen)

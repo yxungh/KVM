@@ -46,9 +46,9 @@ END_MESSAGE_MAP()
 
 // XLogin 消息处理程序
 
-void XLogin::OnOk()
+void XLogin::CloseDlg()
 {
-	XBaseDialog::OnOK();
+	OnCancel();
 }
 
 BOOL XLogin::OnInitDialog()

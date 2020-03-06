@@ -49,6 +49,7 @@ BEGIN_MESSAGE_MAP(CMainFrame,CMDIFrameWndEx)
 
 	ON_COMMAND(ID_BTN_UPDATE,OnBtnUpdate)
 	ON_COMMAND(ID_BTN_FOLDER,OnBtnFolder)
+	ON_COMMAND(IDC_BTN_SECURITY,OnBtnSecurity)
 	//ON_COMMAND(IDC_BTN_OPENNET,OnBtnOpenNet)
 	//ON_COMMAND(IDC_BTN_CLOSENET,OnBtnCloseNet)
 
@@ -122,6 +123,7 @@ BEGIN_MESSAGE_MAP(CMainFrame,CMDIFrameWndEx)
 	ON_UPDATE_COMMAND_UI(IDC_BTN_LOGIN,OnUpdataBtnLogin)
 	ON_UPDATE_COMMAND_UI(IDC_BTN_LOGINOUT,OnUpdataBtnLoginOut)
 	ON_UPDATE_COMMAND_UI(ID_BTN_FOLDER,OnUpdateBtnFolder)
+	ON_UPDATE_COMMAND_UI(IDC_BTN_SECURITY,OnUpdateBtnSecurity)
 	ON_UPDATE_COMMAND_UI(IDC_BTN_POWER,OnUpdataBtnPowerManage)
 	ON_UPDATE_COMMAND_UI(ID_BTN_OSDIMAGE,OnUpdataBtnOsdImage)
 	//ON_UPDATE_COMMAND_UI(ID_BTN_CONTROL,OnUpdataBtnControl)
@@ -181,6 +183,7 @@ BEGIN_MESSAGE_MAP(CMainFrame,CMDIFrameWndEx)
 	ON_COMMAND(ID_MENU_RESTORE,OnMenuRestore)
 	ON_COMMAND(ID_MENU_EXTEND,OnMenuExtend)
 	ON_COMMAND(ID_MENU_CLOSESIGNAL,OnMenuCloseSignal)
+	ON_COMMAND(ID_MENU_SPROPERTY,OnMenuSignalProperty)
 
 
 	//ON_COMMAND(ID_BTN_ADDMODEL,OnAddModel)
@@ -205,6 +208,9 @@ BEGIN_MESSAGE_MAP(CMainFrame,CMDIFrameWndEx)
 	ON_COMMAND(ID_MENU_SAVESCENE,OnBtnSplitScene)
 	ON_UPDATE_COMMAND_UI(ID_MENU_SAVESCENE,OnUpdateSplitScene)
 
+
+	ON_COMMAND(ID_BTN_DEVICECONN,OnBtnDeviceConn)
+	ON_UPDATE_COMMAND_UI(ID_BTN_DEVICECONN,OnUpdateBtnDeviceConn)
 
 
 
@@ -698,6 +704,15 @@ void CMainFrame::OnUpdateBtnFolder(CCmdUI* pCmdUI)
 	m_pBaseInternalManage->UpdateControlUI(CMDUITYPE_FOLDER,pCmdUI);
 }
 
+void CMainFrame::OnBtnSecurity()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_SECURITY,NULL);
+}
+
+void CMainFrame::OnUpdateBtnSecurity(CCmdUI* pCmdUI)
+{
+	m_pBaseInternalManage->UpdateControlUI(CMDUITYPE_SECURITY,pCmdUI);
+}
 
 //void CMainFrame::OnUpdataBtnOpenNet(CCmdUI *pCmdUI)
 //{
@@ -1195,6 +1210,11 @@ void CMainFrame::OnMenuCloseSignal()
 	m_pBaseInternalManage->Operate(OPERATETYPE_MENUCLOSESIGNAL,NULL);
 }
 
+void CMainFrame::OnMenuSignalProperty()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_SPROPERTY,NULL);
+}
+
 //void CMainFrame::OnAddModel()
 //{
 //	//添加模式 不用响应
@@ -1283,6 +1303,15 @@ void CMainFrame::OnBtnSplitScene()
 void CMainFrame::OnUpdateSplitScene(CCmdUI *pCmdUI)
 {
 	m_pBaseInternalManage->UpdateControlUI(CMDUITYPE_SAVESPLITSCENE,pCmdUI);
+}
+
+void CMainFrame::OnBtnDeviceConn()
+{
+	m_pBaseInternalManage->Operate(OPERATETYPE_DEVICECONN,NULL);
+}
+void CMainFrame::OnUpdateBtnDeviceConn(CCmdUI *pCmdUI)
+{
+	m_pBaseInternalManage->UpdateControlUI(CMDUITYPE_DEVICECONN,pCmdUI);
 }
 
 //////////////////////////////////////////////////////////////////////////

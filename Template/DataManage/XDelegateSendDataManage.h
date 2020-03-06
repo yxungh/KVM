@@ -9,4 +9,5 @@ public:
 public:
 
 	virtual BOOL SendData(char* pData, int nDataLen)=0;
+	virtual CString GetCurIP()=0;
 };

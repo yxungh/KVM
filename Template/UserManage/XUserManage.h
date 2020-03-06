@@ -65,6 +65,8 @@ private:
 	BOOL GetLogin();
 	//查找自用户权限（收到自用户列表之后）
 	void ObtainSubUserPower();
+	//设置添加用户默认安全信息
+	void SetUserDefaultSecurityInfo(int nUserID,CString szName);
 
 
 private:
@@ -81,6 +83,8 @@ private:
 
 	void ClearMapRoot();
 	void ClearMapSubFolder();
+
+	void ClearMapUserSecurity();
 
 private:
 
@@ -104,6 +108,10 @@ private:
 	void OperateOfReStoreList(char* pData);
 	//返回数据——根目录
 	void OperateOfReRootFolder(char* pData);
+	//返回用户安全信息
+	void OperateOfReUserSecurity(char* pData);
+	//安全中心设置
+	void OperateOfSecurity();
 
 private:
 	//开始查找根目录
@@ -129,6 +137,8 @@ private:
 	VEC_USERALL m_VecUserAll;
 	//所用用户ID(用户ID),暂时只获取到所有用户ID,
 	VEC_USERIDALL m_VecUserIDAll;
+	//用户安全
+	MAP_SECURITY m_MapUserSecurity;
 
 private:
 

@@ -53,6 +53,13 @@ public:
 	//获取登录用户权限
 	void SendDataOfObtainUserPower(CString szUserName);
 
+	//获取当前用户安全信息
+	void SendDataOfObtainUserSecurity(CString szUserName,BOOL bCurUser);
+
+	//删除安全信息
+	void AddSendDataOfDelUserSecurity(CString szUserName);
+
+
 	//获取子用户权限
 	void SendDataOfObtainSubUserPower(int nID);
 
@@ -294,6 +301,17 @@ public:
 	void AddSendDataOfSetSceneGroup(CString szSceneName,CString szGroup,BOOL bAlter=FALSE);
 	//删除场景
 	void AddSendDataOfDeleteSplitScene(CString szSceneName);
+	//获取拼接输入
+	void AddSendDataOfObtainSplitInput();
+	//设置默认安全信息
+	void SendDataOfSetUserDefaultSecurity(int nUserID,CString szName,CString szType);
+	//当作服务器时
+	void AddSendDataOfObtainAsServer();
+	void AddSendDataOfObtainAsClient();
+	//更改端口号
+	void AddSendDataOfAlterPort(int nPort);
+		
+
 
 private:
 

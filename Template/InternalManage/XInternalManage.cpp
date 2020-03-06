@@ -2369,6 +2369,11 @@ void XInternalManage::OperateOfReSplitScene(char* pData)
 	}
 }
 
+void XInternalManage::OperateOfReSplitInput(char* pData)
+{
+	XLeftWnd::GetInstance()->ReciveDataOfSplitInput(pData);
+}
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 void XInternalManage::ViewDraw(CDC* pDC,CRect rect,int noffsetX,int noffsetY)
@@ -2542,6 +2547,9 @@ void XInternalManage::Operate(OPERATETYPE type,void* pData)
 		case OPERATETYPE_RESTORELIST:
 		case OPERATETYPE_FOLDER:
 		case OPERATETYPE_REROOTFOLDER:
+		case OPERATETYPE_REUSERSECURITY:
+		case OPERATETYPE_SECURITY:
+
 			{
 				m_pUserManage->Operate(type,pData);
 			}
@@ -2580,6 +2588,9 @@ void XInternalManage::Operate(OPERATETYPE type,void* pData)
 		case OPERATETYPE_GETMAINANDSECOND:
 		case OPERATETYPE_REMAINANDSECONDLIST:
 		case OPERATETYPE_SAVESCENE:
+		case OPERATETYPE_DEVICECONN:
+		case OPERATETYPE_REASSERVER:
+		case OPERATETYPE_REASCLIENT:
 			{
 				m_pNodeManage->Operate(type,pData);
 			}
@@ -2657,6 +2668,7 @@ void XInternalManage::Operate(OPERATETYPE type,void* pData)
 		case OPERATETYPE_MENUEXTEND:
 		case OPERATETYPE_MENURESTORE:
 		case OPERATETYPE_MENUCLOSESIGNAL:
+		case OPERATETYPE_SPROPERTY:
 			{
 				//拼接
 				m_pBaseViewManage->Operate(type,NULL);
@@ -2685,6 +2697,11 @@ void XInternalManage::Operate(OPERATETYPE type,void* pData)
 		case OPERATETYPE_SAVESPLITSCENE:
 			{
 				OperateOfSaveSplitScene();
+			}
+			break;
+		case OPERATETYPE_RESPLITINPUT:
+			{
+				OperateOfReSplitInput((char*)pData);
 			}
 			break;
 		default:
@@ -2721,6 +2738,8 @@ void XInternalManage::UpdateControlUI(CMDUITYPE type,CCmdUI* pCmdUI)
 		case CMDUITYPE_CLEARSIGNAL:
 		case CMDUITYPE_LIMITNMODEL:
 		case CMDUITYPE_SAVESPLITSCENE:
+		case CMDUITYPE_SECURITY:
+		case CMDUITYPE_DEVICECONN:
 			{
 				m_pUserManage->UpdateControlUI(type,pCmdUI);
 			}

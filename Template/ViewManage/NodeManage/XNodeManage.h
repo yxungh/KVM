@@ -2,13 +2,17 @@
 #include "XBaseNodeManage.h"
 #include "XConstant.h"
 #include "XDelegateBaseMap.h"
+#include "XDelegateDeviceConn.h"
 
 
 class XBaseMap;
 class XProgressCtrl;
+class XDeviceConn;
+
 
 class XNodeManage:public XBaseNodeManage,
-	public XDelegateBaseMap
+	public XDelegateBaseMap,
+	public XDelegateDeviceConn
 {
 public:
 	XNodeManage();
@@ -90,6 +94,8 @@ public:
 	virtual Color GetViewColor();
 	//调用场景
 	//virtual void OpenScene(CString szSceneName);
+	//获取客户端集合
+	virtual VEC_CLIENT& GetVecClient();
 
 public:
 
@@ -210,6 +216,14 @@ private:
 	void OperateOfSaveScene();
 	//调用场景
 	void OperateOfOpenScene();
+	//设备互联
+	void OperateOfDeviceConn();
+	//作为服务器
+	void OperateOfReAsServer(char* pData);
+	//客户端
+	void OperateOfReAsClient(char* pData);
+
+
 
 public:
 
@@ -292,6 +306,9 @@ private:
 	void ClearMapNodeMainSec();
 	void ClearMapTakeOver();
 
+	void ClearVecClient();
+	void ClearVecServer();
+
 private:
 
 	//硬件节点总数
@@ -321,6 +338,9 @@ private:
 	//int nTakeOverID=0;
 	//被接管ID
 	//int nTargetID=0;
+
+	//互联窗口
+	XDeviceConn* m_pDeviceConn=NULL;
 
 private:
 	//通道连接状态
@@ -359,5 +379,10 @@ private:
 	MAP_TAKEOVER m_MapTakeOver;
 	//键盘键值
 	MAP_KEYVALUE m_MapKeyValue;
+
+	//作为服务端
+	VEC_CLIENT m_VecClient;
+	//作为客户端
+	VEC_SERVER m_VecServer;
 
 };

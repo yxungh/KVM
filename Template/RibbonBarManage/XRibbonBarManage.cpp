@@ -160,22 +160,31 @@ void XRibbonBarManage::InitRibbonBar(CMFCRibbonBar* pRibbonBar)
 	m_pBtnScale->SetMenu(IDR_MENU2);
 
 	//////////////////////////////////////////////////////////////////////////
+	//登录
+	m_pPanelLogin=m_pCategoryMain->AddPanel(_C(_T("24"),_T("登录")));
+	m_pPanelLogin->SetJustifyColumns(TRUE);
+	m_pPanelLogin->SetCenterColumnVert(TRUE);
+
+	m_pLogin=new CMFCRibbonButton(IDC_BTN_LOGIN,_C(_T("21"),_T("登录")),AfxGetApp()->LoadIcon(IDI_ICON_LOGIN));
+	m_pPanelLogin->Add(m_pLogin);
+
+	m_pLoginOut=new CMFCRibbonButton(IDC_BTN_LOGINOUT,_C(_T("22"),_T("注销")),AfxGetApp()->LoadIcon(IDI_ICON_OUT));
+	m_pPanelLogin->Add(m_pLoginOut);
+
+
 	//用户管理
 	m_pPanelUser=m_pCategoryMain->AddPanel(_C(_T("23"),_T("用户管理")));
 	m_pPanelUser->SetJustifyColumns(TRUE);
 	m_pPanelUser->SetCenterColumnVert(TRUE);
 
-	m_pLogin=new CMFCRibbonButton(IDC_BTN_LOGIN,_C(_T("21"),_T("登录")),AfxGetApp()->LoadIcon(IDI_ICON_LOGIN));
-	m_pPanelUser->Add(m_pLogin);
-
-	m_pPowerManage=new CMFCRibbonButton(IDC_BTN_POWER,_C(_T("34"),_T("权限")),AfxGetApp()->LoadIcon(IDI_ICON_POWER_1));
+	m_pPowerManage=new CMFCRibbonButton(IDC_BTN_POWER,_C(_T("34"),_T("用户权限")),AfxGetApp()->LoadIcon(IDI_ICON_USERPOWER));
 	m_pPanelUser->Add(m_pPowerManage);
+
+	m_pPowerSecurity=new CMFCRibbonButton(IDC_BTN_SECURITY,_C(_T("354"),_T("安全中心")),AfxGetApp()->LoadIcon(IDI_ICON_POWER_1));
+	m_pPanelUser->Add(m_pPowerSecurity);
 
 	m_pFloder=new CMFCRibbonButton(ID_BTN_FOLDER,_C(_T("316"),_T("文件夹")),AfxGetApp()->LoadIcon(IDI_ICON_FOLDER));
 	m_pPanelUser->Add(m_pFloder);
-
-	m_pLoginOut=new CMFCRibbonButton(IDC_BTN_LOGINOUT,_C(_T("22"),_T("注销")),AfxGetApp()->LoadIcon(IDI_ICON_OUT));
-	m_pPanelUser->Add(m_pLoginOut);
 
 	m_pPanelImage=m_pCategoryMain->AddPanel(_C(_T("77"),_T("底图")));
 	m_pPanelImage->SetJustifyColumns(TRUE);
@@ -210,6 +219,10 @@ void XRibbonBarManage::InitRibbonBar(CMFCRibbonBar* pRibbonBar)
 	m_pPanelDevice=m_pCategoryMain->AddPanel(_C(_T("13"),_T("设备")));
 	m_pPanelDevice->SetJustifyColumns(TRUE);
 	m_pPanelDevice->SetCenterColumnVert(TRUE);
+
+	//设置互联
+	m_pBtnConn=new CMFCRibbonButton(ID_BTN_DEVICECONN,_C(_T("358"),_T("设备互联")),AfxGetApp()->LoadIcon(IDI_ICON_DEVICECONN));
+	m_pPanelDevice->Add(m_pBtnConn);
 
 	//升级服务器
 	m_pBtnUpdate=new CMFCRibbonButton(ID_BTN_UPDATE,_C(_T("269"),_T("升级")),AfxGetApp()->LoadIcon(IDI_ICON_UPDATE));

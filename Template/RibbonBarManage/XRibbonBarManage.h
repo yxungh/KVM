@@ -78,14 +78,19 @@ private:
 	CMFCRibbonButton* m_pBtnTheme=NULL;
 	//缩放
 	CMFCRibbonButton* m_pBtnScale=NULL;
-	//用户管理
-	CMFCRibbonPanel* m_pPanelUser=NULL;
+	//登录
+	CMFCRibbonPanel* m_pPanelLogin=NULL;
 	//登陆
 	CMFCRibbonButton* m_pLogin=NULL;
 	//注销
 	CMFCRibbonButton* m_pLoginOut=NULL;
+
+	//用户管理
+	CMFCRibbonPanel* m_pPanelUser=NULL;
 	//用户权限
 	CMFCRibbonButton* m_pPowerManage=NULL;
+	//安全中心
+	CMFCRibbonButton* m_pPowerSecurity=NULL;
 	//文件夹
 	CMFCRibbonButton* m_pFloder=NULL;
 
@@ -110,10 +115,13 @@ private:
 	//////////////////////////////////////////////////////////////////////////
 	//设备
 	CMFCRibbonPanel* m_pPanelDevice=NULL;
+	//互联
+	CMFCRibbonButton* m_pBtnConn=NULL;
 	//升级服务器
 	CMFCRibbonButton* m_pBtnUpdate=NULL;
 	//网络
 	CMFCRibbonButton* m_pBtnNet=NULL;
+	
 	//打开网络
 	//CMFCRibbonButton* m_pBtnOpenNet=NULL;
 	//关闭网络

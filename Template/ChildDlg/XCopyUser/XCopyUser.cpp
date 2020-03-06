@@ -40,9 +40,10 @@ END_MESSAGE_MAP()
 
 // XCopyUser 消息处理程序
 
-void XCopyUser::OnOk()
+
+void XCopyUser::CloseDlg()
 {
-	XBaseDialog::OnOK();
+	OnCancel();
 }
 
 BOOL XCopyUser::OnInitDialog()
@@ -110,23 +111,23 @@ void XCopyUser::OnBnClickedOk()
 	}
 
 
-	if(XHandleVerification::HasChinese(szPassWd))
-	{
-		_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
-		return;
-	}
+	//if(XHandleVerification::HasChinese(szPassWd))
+	//{
+	//	_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
+	//	return;
+	//}
 
-	int nRet=XHandleVerification::VerificationPasswd(szPassWd);
-	if(nRet==1)
-	{
-		_M(_T("320"),_T("密码为字密码至少位4位！"),MB_OK);
-		return;
-	}
-	else if(nRet==2)
-	{
-		_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
-		return;
-	}
+	//int nRet=XHandleVerification::VerificationPasswd(szPassWd);
+	//if(nRet==1)
+	//{
+	//	_M(_T("320"),_T("密码为字密码至少位4位！"),MB_OK);
+	//	return;
+	//}
+	//else if(nRet==2)
+	//{
+	//	_M(_T("319"),_T("密码为字母和数组！"),MB_OK);
+	//	return;
+	//}
 
 
 	m_szUserName=szUserName;

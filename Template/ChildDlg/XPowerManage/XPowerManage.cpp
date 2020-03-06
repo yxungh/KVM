@@ -39,6 +39,7 @@ XPowerManage::~XPowerManage()
 	ClearMapSubUserPower();
 	ClearMapSelect();
 	ClearMapPrivilege();
+
 }
 
 void XPowerManage::DoDataExchange(CDataExchange* pDX)
@@ -1686,7 +1687,7 @@ void XPowerManage::OnBtnClickedAdd()
 void XPowerManage::CloseAddUserDlg()
 {
 	if(nullptr!=m_pAddUser)
-		m_pAddUser->OnOk();
+		m_pAddUser->CloseDlg();
 }
 
 void XPowerManage::AddUser()
@@ -1714,43 +1715,6 @@ void XPowerManage::AddUser()
 	SetPrivilegeBySelect(m_VecViewSel,MapPrivilege,1);
 	SetPrivilegeBySelect(m_VecMonCtrlSel,MapPrivilege,3);
 
-
-	//for(auto iter=m_VecCtrlSel.begin();iter!=m_VecCtrlSel.end();++iter)
-	//{
-	//	CString szNodeID=*iter;
-	//	int nNodeID=_ttoi(szNodeID);
-
-	//	XPrivilege* p=new XPrivilege;
-	//	p->m_nNodeID=nNodeID;
-	//	p->m_nPrivilege=2;
-
-	//	MapPrivilege.insert(std::pair<int,XPrivilege*>(nNodeID,p));
-	//}
-
-	//for(auto iter=m_VecViewSel.begin();iter!=m_VecViewSel.end();++iter)
-	//{
-	//	CString szNodeID=*iter;
-	//	int nNodeID=_ttoi(szNodeID);
-
-	//	XPrivilege* p=new XPrivilege;
-	//	p->m_nNodeID=nNodeID;
-	//	p->m_nPrivilege=1;
-
-	//	MapPrivilege.insert(std::pair<int,XPrivilege*>(nNodeID,p));
-	//}
-
-	//for(auto iter=m_VecMonCtrlSel.begin();iter!=m_VecMonCtrlSel.end();++iter)
-	//{
-	//	CString szNodeID=*iter;
-	//	int nNodeID=_ttoi(szNodeID);
-
-	//	XPrivilege* p=new XPrivilege;
-	//	p->m_nNodeID=nNodeID;
-	//	p->m_nPrivilege=3;
-
-	//	MapPrivilege.insert(std::pair<int,XPrivilege*>(nNodeID,p));
-	//}
-
 	WritePrivilege(VecCtrl,MapPrivilege);
 
 	VEC_PRIVILEGE VecLogin;
@@ -1771,6 +1735,13 @@ void XPowerManage::AddUser()
 	//pPower.GetPrivilegeView().SetVecPrivilege(VecView);
 
 	XSendDataManage::GetInstance()->AddSendDataOfAddUser(&pPower);
+
+	//清理上边集合(内存泄漏)
+	for(auto& map:MapPrivilege)
+	{
+		delete map.second;
+	}
+	MapPrivilege.clear();
 }
 
 void XPowerManage::SetPrivilegeBySelect(VEC_SUBSELECT& VecSelect,MAP_CTRLPRIVILEGE& MapPrivilege,int nType)
@@ -1859,13 +1830,15 @@ void XPowerManage::OnBtnClickedAlter()
 	}
 
 	CString szUserName=XSetListCtrl::GetColumnText(&m_UserList,nItem,1);
+	AlterUserPower(szUserName);
+	//去掉对话框
 
-	XAlterUser dlg;
-	m_pAlterUser=&dlg;
-	dlg.SetDelegate(this);
-	dlg.SetUserName(szUserName);
-	dlg.DoModal();
-	m_pAlterUser=nullptr;
+	//XAlterUser dlg;
+	//m_pAlterUser=&dlg;
+	//dlg.SetDelegate(this);
+	//dlg.SetUserName(szUserName);
+	//dlg.DoModal();
+	//m_pAlterUser=nullptr;
 }
 
 void XPowerManage::CloseAlterUserDlg()
@@ -1874,32 +1847,8 @@ void XPowerManage::CloseAlterUserDlg()
 		m_pAlterUser->OnOK();
 }
 
-void XPowerManage::AlterUser()
+void XPowerManage::AlterUserPower(CString szName)
 {
-	//CString szUserName=m_pAlterUser->GetUserName();
-	//CString szPassWd=m_pAlterUser->GetPassWd();
-	//MAP_SELECT& MapSelect=m_pAlterUser->GetMapSelect();
-	////根据选择计算权限
-	//int nPermission=0;
-	//for(auto iter=MapSelect.begin();iter!=MapSelect.end();++iter)
-	//{
-	//	XPowerSelectInfo* pInfo=iter->second;
-	//	int nIndex=pInfo->GetPowerIndex();
-	//	nPermission|=(1<<nIndex);
-	//}
-
-	//MAP_POWER& MapPower=m_pDelegate->GetMapPower();
-	//XPower* pPower=NULL;
-	//MAP_POWER::iterator iter=MapPower.find(szUserName);
-	//if(iter!=MapPower.end())
-	//{
-	//	pPower=iter->second;
-	//}
-
-	//pPower->SetPassWd(szPassWd);
-	//pPower->SetManagePermission(nPermission);
-
-
 	DWORD dwTime=GetTickCount();
 	if((long)dwTime-(long)m_dwTime<3000)
 	{
@@ -1907,8 +1856,8 @@ void XPowerManage::AlterUser()
 		return;
 	}
 
-	CString szUserName=m_pAlterUser->GetUserName();
-	CString szPassWd=m_pAlterUser->GetPassWd();
+	//CString szUserName=m_pAlterUser->GetUserName();
+	//CString szPassWd=m_pAlterUser->GetPassWd();
 
 	//根据选择计算权限
 	int nPermission=0;
@@ -1937,7 +1886,7 @@ void XPowerManage::AlterUser()
 
 	MAP_POWER& MapPower=m_pDelegate->GetMapPower();
 	XPower* pPower=NULL;
-	MAP_POWER::iterator iter=MapPower.find(szUserName);
+	MAP_POWER::iterator iter=MapPower.find(szName);
 	if(iter!=MapPower.end())
 	{
 		pPower=iter->second;
@@ -1947,8 +1896,8 @@ void XPowerManage::AlterUser()
 		return;
 
 	XPower *pPowerNew=new XPower;
-	pPowerNew->SetUserName(szUserName);
-	pPowerNew->SetPassWd(szPassWd);
+	pPowerNew->SetUserName(szName);
+	pPowerNew->SetPassWd(_T(""));
 	pPowerNew->SetManagePermission(nPermission);
 	pPowerNew->GetPrivilegeCtrl().SetType(86);
 	pPowerNew->GetPrivilegeLogin().SetType(86);
@@ -1956,9 +1905,96 @@ void XPowerManage::AlterUser()
 	pPowerNew->GetPrivilegeCtrl().SetVecPrivilege(VecCtrl);
 	pPowerNew->GetPrivilegeLogin().SetVecPrivilege(VecLogin);
 	//pPower->GetPrivilegeView().SetVecPrivilege(VecView);
-	XSendDataManage::GetInstance()->AddSendDataOfAlterUser(pPowerNew,szPassWd);
+	XSendDataManage::GetInstance()->AddSendDataOfAlterUser(pPowerNew,_T(""));
 
 	delete pPowerNew;
+}
+
+void XPowerManage::AlterUser()
+{
+	//CString szUserName=m_pAlterUser->GetUserName();
+	//CString szPassWd=m_pAlterUser->GetPassWd();
+	//MAP_SELECT& MapSelect=m_pAlterUser->GetMapSelect();
+	////根据选择计算权限
+	//int nPermission=0;
+	//for(auto iter=MapSelect.begin();iter!=MapSelect.end();++iter)
+	//{
+	//	XPowerSelectInfo* pInfo=iter->second;
+	//	int nIndex=pInfo->GetPowerIndex();
+	//	nPermission|=(1<<nIndex);
+	//}
+
+	//MAP_POWER& MapPower=m_pDelegate->GetMapPower();
+	//XPower* pPower=NULL;
+	//MAP_POWER::iterator iter=MapPower.find(szUserName);
+	//if(iter!=MapPower.end())
+	//{
+	//	pPower=iter->second;
+	//}
+
+	//pPower->SetPassWd(szPassWd);
+	//pPower->SetManagePermission(nPermission);
+
+
+	//DWORD dwTime=GetTickCount();
+	//if((long)dwTime-(long)m_dwTime<3000)
+	//{
+	//	m_dwTime=GetTickCount();
+	//	return;
+	//}
+
+	//CString szUserName=m_pAlterUser->GetUserName();
+	//CString szPassWd=m_pAlterUser->GetPassWd();
+
+	////根据选择计算权限
+	//int nPermission=0;
+	//for(auto iter=m_MapSelect.begin();iter!=m_MapSelect.end();++iter)
+	//{
+	//	XPowerSelectInfo* pInfo=iter->second;
+	//	int nIndex=pInfo->GetPowerIndex();
+	//	nPermission|=(1<<nIndex);
+	//}
+	////计算子权限
+	//VEC_PRIVILEGE VecCtrl;
+	//MAP_CTRLPRIVILEGE MapPrivilege;
+
+	//SetPrivilegeBySelect(m_VecCtrlSel,MapPrivilege,2);
+	//SetPrivilegeBySelect(m_VecViewSel,MapPrivilege,1);
+	//SetPrivilegeBySelect(m_VecMonCtrlSel,MapPrivilege,3);
+
+	//WritePrivilege(VecCtrl,MapPrivilege);
+
+	////取消预览权限
+	////VEC_PRIVILEGE VecView;
+	////WritePrivilege(VecView,m_VecViewSel);
+
+	//VEC_PRIVILEGE VecLogin;
+	//WritePrivilege(VecLogin,m_VecLoginSel);
+
+	//MAP_POWER& MapPower=m_pDelegate->GetMapPower();
+	//XPower* pPower=NULL;
+	//MAP_POWER::iterator iter=MapPower.find(szUserName);
+	//if(iter!=MapPower.end())
+	//{
+	//	pPower=iter->second;
+	//}
+
+	//if(NULL==pPower)
+	//	return;
+
+	//XPower *pPowerNew=new XPower;
+	//pPowerNew->SetUserName(szUserName);
+	//pPowerNew->SetPassWd(szPassWd);
+	//pPowerNew->SetManagePermission(nPermission);
+	//pPowerNew->GetPrivilegeCtrl().SetType(86);
+	//pPowerNew->GetPrivilegeLogin().SetType(86);
+	//pPowerNew->GetPrivilegeView().SetType(86);
+	//pPowerNew->GetPrivilegeCtrl().SetVecPrivilege(VecCtrl);
+	//pPowerNew->GetPrivilegeLogin().SetVecPrivilege(VecLogin);
+	////pPower->GetPrivilegeView().SetVecPrivilege(VecView);
+	//XSendDataManage::GetInstance()->AddSendDataOfAlterUser(pPowerNew,szPassWd);
+
+	//delete pPowerNew;
 }
 
 void XPowerManage::UpdatePowerList(CString szName)
@@ -2033,7 +2069,7 @@ void XPowerManage::OnBtnClickedCopy()
 void XPowerManage::CloseCopyUserDlg()
 {
 	if(nullptr!=m_pCopyUser)
-		m_pCopyUser->OnOk();
+		m_pCopyUser->CloseDlg();
 }
 
 void XPowerManage::CopyUser()
@@ -2069,8 +2105,11 @@ void XPowerManage::OnBtnClickedDel()
 		CString szUserID=XSetListCtrl::GetColumnText(&m_UserList,nItem,0);
 		CString szUserName=XSetListCtrl::GetColumnText(&m_UserList,nItem,1);
 
+		//删除用户安全信息
+		XSendDataManage::GetInstance()->AddSendDataOfDelUserSecurity(szUserName);
+
 		//发送删除用户
-		XSendDataManage::GetInstance()->AddSendDataOfDelUser(szUserName);
+		//XSendDataManage::GetInstance()->AddSendDataOfDelUser(szUserName);
 	}
 }
 

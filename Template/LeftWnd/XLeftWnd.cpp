@@ -15,6 +15,10 @@
 #include "XMessageBox.h"
 #include "XAlterName.h"
 #include "XAddGroup.h"
+#include "XSplitInput.h"
+#include "XSplitInputResult.h"
+#include "XJsonManage.h"
+
 
 
 XLeftWnd* XLeftWnd::m_pLeftWnd=NULL;
@@ -37,6 +41,7 @@ XLeftWnd::~XLeftWnd()
 	RELEASE(m_pDragWnd);
 	ClearVecDrag();
 	ClearVecDel();
+	ClearSplitInput();
 }
 
 BEGIN_MESSAGE_MAP(XLeftWnd,CDockablePane)
@@ -85,6 +90,15 @@ void XLeftWnd::ClearVecDrag()
 void XLeftWnd::ClearVecDel()
 {
 	m_VecDel.clear();
+}
+
+void XLeftWnd::ClearSplitInput()
+{
+	for(auto& pInput:m_VecSplitInput)
+	{
+		delete pInput;
+	}
+	m_VecSplitInput.clear();
 }
 
 int XLeftWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -1808,6 +1822,16 @@ void XLeftWnd::ResetRibbonBar()
 float XLeftWnd::GetCurScale()
 {
 	return m_pDelegate->GetCurScale();
+}
+
+void XLeftWnd::ReciveDataOfSplitInput(char* pData)
+{
+	XSplitInputResult result;
+	XJsonManage::GetInstance()->ParseJsonToSplitInput(pData,result);
+
+
+
+
 }
 
 /////////////////////////////////////////////////////////////////////////

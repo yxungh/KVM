@@ -41,7 +41,11 @@
 #include "XSplitSceneResult.h"
 #include "XSplitScene.h"
 #include "XInternalManage.h"
-
+#include "XSplitInputResult.h"
+#include "XMD5.h"
+#include "XSecurityResult.h"
+#include "XUserSecurity.h"
+#include "XClient.h"
 
 
 XJsonManage* XJsonManage::m_pJsomManage=NULL;
@@ -80,7 +84,7 @@ void XJsonManage::ParseJsonToLogin(const char* pData,XLoginInfo& userInfo)
 		std::string UserName=root["user"].asCString();
 		CString szUserName(UserName.c_str());
 
-		std::string PassWd=root["key"].asCString();
+		std::string PassWd=root["key_md5"].asCString();
 		CString szPassWd(PassWd.c_str());
 
 		int nID=root["ID"].asInt();
@@ -230,7 +234,7 @@ void XJsonManage::ParseJsonToPower(const char* pData,XUserManage* pManage,XUpdat
 		}
 		else if(szType==POWER_REDATA_ADD)
 		{
-			TRACE(_T("nResult=%d\n"),nResult);
+			//TRACE(_T("nResult=%d\n"),nResult);
 
 			if(nResult==101)
 			{
@@ -893,7 +897,7 @@ void XJsonManage::ParseJsonToReNodeStatus(const char* pData,MAP_NODE& MapNode,XN
 							pNode->SetNodeType(nType);
 
 							switch(nType)
-							{
+							{						
 								case TERM_IN:
 									{
 										int nInStatus=array[strKey]["in sta"].asInt();
@@ -2898,7 +2902,7 @@ void XJsonManage::ParseJsonToReSplitScene(const char* pData,XInternalManage* pIn
 		}
 		else if(szType==_T("LIST_WALL"))
 		{
-		TRACE(_T("LIST_WALL=%d\n"),nResult);
+		//TRACE(_T("LIST_WALL=%d\n"),nResult);
 
 
 			if(nResult!=0)
@@ -3040,11 +3044,11 @@ void XJsonManage::ParseJsonToReSplitScene(const char* pData,XInternalManage* pIn
 
 			int nScreenCountH=root["scene_wall_obj"]["screen_num_h"].asInt();
 			pManage->SetScreenCountX(nScreenCountH);
-			TRACE(_T("ScreenH=%d\n"),nScreenCountH);
+			//TRACE(_T("ScreenH=%d\n"),nScreenCountH);
 
 			int nScreenCountV=root["scene_wall_obj"]["screen_num_v"].asInt();
 			pManage->SetScreenCountY(nScreenCountV);
-			TRACE(_T("ScreenV=%d\n"),nScreenCountV);
+			//TRACE(_T("ScreenV=%d\n"),nScreenCountV);
 
 
 			auto& VecSplitCh=pManage->GetVecSplitCh();
@@ -3126,6 +3130,274 @@ void XJsonManage::ParseJsonToReSplitScene(const char* pData,XInternalManage* pIn
 	}
 }
 
+void XJsonManage::ParseJsonToSplitInput(const char* pData,XSplitInputResult& result)
+{
+	//13,4 协议 不是软件用的
+	Json::Reader reader;
+	Json::Value root;
+
+	if(reader.parse(pData,root))
+	{
+		int nResult=root["result"].asInt();
+		result.SetResult(nResult);
+
+		CString szType(root["utype"].asCString());
+		result.SetSendType(szType);
+
+		if(szType==_T("LIST"))
+		{
+			if(nResult!=0)
+				return;
+
+			const Json::Value array=root["list"];
+			if(!array.isNull())
+			{
+				for(unsigned int i=0;i<array.size();++i)
+				{
+					int nID=array[i].asInt();
+					TRACE(_T("ID=%d\n"),nID);
+
+
+
+				}
+			}
+		}
+	}
+}
+
+void XJsonManage::ParseJsonToUserSecurity(const char* pData,MAP_SECURITY& MapSecurity,XSecurityResult& result)
+{
+	Json::Reader reader;
+	Json::Value root;
+
+	if(reader.parse(pData,root))
+	{
+		int nResult=root["result"].asInt();
+		result.SetResult(nResult);
+
+		CString szType(root["utype"].asCString());
+		result.SetSendType(szType);
+
+		if(szType==_T("QUERY"))
+		{
+			if(nResult!=0)
+				return;
+			//其实不分开也行
+			CString szUserType(root["user type"].asString().c_str());
+			result.m_szUserType=szUserType;
+
+			int nUseID=root["ID"].asInt();
+			CString szUser(root["user"].asString().c_str());
+			//TRACE(_T("QUERY security=%s\n"),szUser);
+
+
+			XUserSecurity* pSecurity=NULL;
+			if(MapSecurity.find(szUser)!=MapSecurity.end())
+			{
+				pSecurity=MapSecurity[szUser];
+			}
+			else
+			{
+				pSecurity=new XUserSecurity;
+				MapSecurity.insert(std::pair<CString,XUserSecurity*>(szUser,pSecurity));
+			}
+
+			CString szKeyMd5(root["key_md5"].asString().c_str());
+			pSecurity->m_szKeyMd5=szKeyMd5;
+
+			int nSecurityMark=root["security_mark"].asInt();
+			pSecurity->m_nSecurityMark=nSecurityMark;
+
+			CString szBanReason(root["ban_reason"].asString().c_str());
+			pSecurity->m_szBanReason=szBanReason;
+
+			int nBanUntilTime=root["ban_until_time"].asInt();
+			pSecurity->m_nBanUntilTime=nBanUntilTime;
+
+			int nTermLogFailTime=root["term_log_fail_times"].asInt();
+			pSecurity->m_nTermLogFailTime=nTermLogFailTime;
+
+			int nNetLogFailTime=root["net_log_fail_times"].asInt();
+			pSecurity->m_nNetLogFailTime=nNetLogFailTime;
+
+			int nLastSuccessTime=root["last_log_success_t"].asInt();
+			pSecurity->m_nLastSuccessTime=nLastSuccessTime;
+
+			CString szLastLogInfo(root["last_log_info"].asString().c_str());
+			pSecurity->m_szLastLogInfo=szLastLogInfo;
+
+			int nAnswerNum=root["reset_require_answer_num"].asInt();
+			pSecurity->m_nAnswerNum=nAnswerNum;
+
+
+			pSecurity->m_VecQuestion.clear();
+			const Json::Value array1=root["security_question"];
+			if(!array1.isNull())
+			{
+				for(unsigned int i=0;i<array1.size();++i)
+				{
+					CString szQuestion(array1[i].asString().c_str());
+					pSecurity->m_VecQuestion.push_back(szQuestion);
+				}
+			}
+
+			pSecurity->m_VecAnswer.clear();
+			const Json::Value array2=root["question_answer"];
+			if(!array2.isNull())
+			{
+				for(unsigned int i=0;i<array2.size();++i)
+				{
+					CString szQuestion(array2[i].asString().c_str());
+					pSecurity->m_VecAnswer.push_back(szQuestion);
+				}
+			}
+		}
+		else if(szType==_T("DEL"))
+		{
+			//TRACE(_T("security Del=%d\n"),nResult);
+
+			if(nResult!=0)
+				return;
+			CString szName(root["user"].asString().c_str());
+			//TRACE(_T("name=%s\n"),szName);
+			result.m_szUserName=szName;
+
+		}
+		else if(szType==_T("ADD")||szType==_T("UPDATE"))
+		{
+			//第一次添加默认安全信息
+			//TRACE(_T("Add=%d\n"),result.GetResult());
+			//TRACE(_T("type=%s\n"),szType);
+
+			CString szName(root["user"].asString().c_str());
+			result.m_szUserName=szName;
+			//TRACE(_T("name=%s\n"),szName);
+
+			int nUserID=root["ID"].asInt();
+			//TRACE(_T("id=%d\n"),nUserID);
+			result.m_nUserID=nUserID;
+
+			if(nResult!=101)
+				return;
+
+			XUserSecurity* pSecurity=NULL;
+			if(MapSecurity.find(szName)!=MapSecurity.end())
+			{
+				pSecurity=MapSecurity[szName];
+			}
+			else
+			{
+				pSecurity=new XUserSecurity;
+				MapSecurity.insert(std::pair<CString,XUserSecurity*>(szName,pSecurity));
+			}
+
+			pSecurity->m_nUserID=nUserID;
+
+			CString szKeyMd5(root["key_md5"].asString().c_str());
+			pSecurity->m_szKeyMd5=szKeyMd5;
+
+			int nSecurityMark=root["security_mark"].asInt();
+			pSecurity->m_nSecurityMark=nSecurityMark;
+
+			int nAnswerNum=root["reset_require_answer_num"].asInt();
+			pSecurity->m_nAnswerNum=nAnswerNum;
+
+			pSecurity->m_VecQuestion.clear();
+			const Json::Value array1=root["security_question"];
+			if(!array1.isNull())
+			{
+				for(unsigned int i=0;i<array1.size();++i)
+				{
+					CString szQuestion(array1[i].asString().c_str());
+					pSecurity->m_VecQuestion.push_back(szQuestion);
+				}
+			}
+
+			pSecurity->m_VecAnswer.clear();
+			const Json::Value array2=root["question_answer"];
+			if(!array2.isNull())
+			{
+				for(unsigned int i=0;i<array2.size();++i)
+				{
+					CString szQuestion(array2[i].asString().c_str());
+					pSecurity->m_VecAnswer.push_back(szQuestion);
+				}
+			}
+		}
+	}
+}
+
+
+void XJsonManage::ParseJsonToAsServer(const char* pData,VEC_CLIENT& VecClient,XResult& result)
+{
+	Json::Reader reader;
+	Json::Value root;
+
+	if(reader.parse(pData,root))
+	{
+		int nResult=root["result"].asInt();
+		result.SetResult(nResult);
+
+		CString szType(root["utype"].asCString());
+		result.SetSendType(szType);
+
+		if(szType==_T("QUERY"))
+		{
+			if(nResult!=0)
+				return;
+
+			//情况集合
+			for(auto& pClient:VecClient)
+			{
+				delete pClient;
+			}
+			VecClient.clear();
+
+			CString szServerIP(root["InterSvr_list"]["Server"]["IP"].asString().c_str());
+			int nServerPort=root["InterSvr_list"]["Server"]["PORT"].asInt();
+
+			const Json::Value array=root["InterSvr_list"]["Client"];
+			Json::Value::Members members=array.getMemberNames();
+			for(Json::Value::Members::iterator iterMember=members.begin();iterMember!=members.end();++iterMember)
+			{
+				std::string strKey=*iterMember;
+				CString szKey(strKey.c_str());
+
+
+				CString szName(array[strKey]["name"].asString().c_str());
+				CString szIP(array[strKey]["IP"].asString().c_str());
+				int nUserID=array[strKey]["user ID"].asInt();
+
+				XClient* pClient=new XClient;
+				pClient->m_szServerIP=szServerIP;
+				pClient->m_nServerPort=nServerPort;
+				pClient->m_szClientName=szName;
+				pClient->m_szClientIP=szIP;
+				pClient->m_nUserID=nUserID;
+
+
+				VecClient.push_back(pClient);
+			}
+		}
+		else if(szType==_T("ADD"))
+		{
+			if(nResult!=0)
+				return;
+
+			int nPort=root["SVR PORT"].asInt();
+			CString szIP(root["SVR IP"].asString().c_str());
+
+
+			//更改端口号
+			for(auto& pClient:VecClient)
+			{
+				pClient->m_nServerPort=nPort;
+				pClient->m_szServerIP=szIP;
+			}
+		}
+	}
+}
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -3137,7 +3409,7 @@ void XJsonManage::WriteJsonToLogin(CString& szUserName,CString& szPassWd,CString
 
 	USES_CONVERSION;
 	root["user"]=Json::Value(W2A(szUserName));
-	root["key"]=Json::Value(W2A(szPassWd));
+	root["key_md5"]=Json::Value(XMD5(W2A(szPassWd)).toString());
 
 	std::string str=write.write(root);
 	szData=str.c_str();
@@ -3176,6 +3448,28 @@ void XJsonManage::WriteJsonToObtainPower(CString szUserName,CString &szData)
 	root["utype"]=Json::Value("QUERY");
 	root["user"]=Json::Value(W2A(szUserName));
 	root["user type"]=Json::Value("QUERY_CURUSER");
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonToObtainUserSecurity(CString szUserName,CString &szData,BOOL bCurUser)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	USES_CONVERSION;
+	root["utype"]=Json::Value("QUERY");
+	root["user"]=Json::Value(W2A(szUserName));
+
+	if(bCurUser)
+	{
+		root["user type"]=Json::Value("QUERY_CURUSER");
+	}
+	else
+	{
+		root["user type"]=Json::Value("QUERY_SUBUSER");
+	}
 
 	std::string str=write.write(root);
 	szData=str.c_str();
@@ -3359,6 +3653,7 @@ void XJsonManage::WriteJsonToDelUser(CString szUserName,CString& szData)
 	USES_CONVERSION;
 	root["utype"]=Json::Value("DEL");
 	root["user"]=Json::Value(W2A(szUserName));
+
 
 	std::string str=write.write(root);
 	szData=str.c_str();
@@ -4836,6 +5131,100 @@ void XJsonManage::WriteJsonDeleteSplitScene(CString& szData,CString szSceneName)
 	USES_CONVERSION;
 	root["utype"]=Json::Value("DEL");
 	root["scene_name"]=Json::Value(W2A(szSceneName));
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonObtainSplitInput(CString& szData)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	root["utype"]=Json::Value("LIST");
+	root["index"]=Json::Value(0);
+	root["len"]=Json::Value(16);
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonSetUserDefaultSecurity(CString& szData,int nUserID,CString szName,CString szType)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	USES_CONVERSION;
+	root["utype"]=Json::Value(W2A(szType));
+	root["ID"]=Json::Value(nUserID);
+	root["user"]=Json::Value(W2A(szName));
+	root["key_md5"]=Json::Value("00000000000000000000000000000000");
+	root["security_mark"]=Json::Value(0);
+	root["reset_require_answer_num"]=Json::Value(2);
+
+	root["security_question"].append("");
+	root["security_question"].append("");
+	root["security_question"].append("");
+	root["security_question"].append("");
+	root["security_question"].append("");
+	root["security_question"].append("");
+
+	root["question_answer"].append("00000000000000000000000000000000");
+	root["question_answer"].append("00000000000000000000000000000000");
+	root["question_answer"].append("00000000000000000000000000000000");
+	root["question_answer"].append("00000000000000000000000000000000");
+	root["question_answer"].append("00000000000000000000000000000000");
+	root["question_answer"].append("00000000000000000000000000000000");
+
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonToDelUserSecurity(CString& szData,CString szName)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	USES_CONVERSION;
+	root["utype"]=Json::Value("DEL");
+	root["user"]=Json::Value(W2A(szName));
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonAsServer(CString& szData)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	root["utype"]=Json::Value("QUERY");
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonAsClient(CString& szData)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	root["utype"]=Json::Value("QUERY");
+
+	std::string str=write.write(root);
+	szData=str.c_str();
+}
+
+void XJsonManage::WriteJsonAlterServerPort(CString& szData,CString szIP,int nPort)
+{
+	Json::Value root;
+	Json::FastWriter write;
+
+	USES_CONVERSION;
+	root["utype"]=Json::Value("ADD");
+	root["SVR IP"]=Json::Value(W2A(szIP));
+	root["SVR PORT"]=Json::Value(nPort);
 
 	std::string str=write.write(root);
 	szData=str.c_str();

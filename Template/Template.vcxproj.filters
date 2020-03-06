@@ -902,6 +902,63 @@
     <ClInclude Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ChildDlg\XProperty\XSignalProperty.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\SplitManage\XSplitInput.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSplitInputResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5\XMD5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManage\Info\XUserSecurity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Result\XSecurityResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSecurity\XSecurityDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSecurity\XDelegateSecurity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSecurity\XSetPassWord.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSecurity\XSetSecretDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XSecurity\XResetPassWord.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceConn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XDeviceConn\XClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManage\NodeManage\XDeviceConn\XServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XDelegateDeviceConn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XDelegateDeviceServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDlg\XDeviceConn\XAlterPort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Template.cpp">
@@ -1579,6 +1636,63 @@
     <ClCompile Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ChildDlg\XProperty\XSignalProperty.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\SplitManage\XSplitInput.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSplitInputResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5\XMD5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManage\Info\XUserSecurity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Result\XSecurityResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSecurity\XSecurityDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSecurity\XDelegateSecurity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSecurity\XSetPassWord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSecurity\XSetSecretDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XSecurity\XResetPassWord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceConn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XDeviceConn\XClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManage\NodeManage\XDeviceConn\XServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XDelegateDeviceConn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XDelegateDeviceServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDlg\XDeviceConn\XAlterPort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Template.rc">
@@ -1617,6 +1731,12 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\top.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\userpower.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\deviceConn.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

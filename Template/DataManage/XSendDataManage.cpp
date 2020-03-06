@@ -129,6 +129,12 @@ void XSendDataManage::AddFullSendDataByProtocol(unsigned char* pSrcData,unsigned
 				pData[5]=0x07;
 			}
 			break;
+		case PROTOCOLTYPE_OBTAINUSERSECURITY:
+			{
+				pData[4]=0x09;
+				pData[5]=0x07;
+			}
+			break;
 		case PROTOCOLTYPE_NETCONFIG:
 			{
 				pData[4]=0x00;
@@ -144,6 +150,18 @@ void XSendDataManage::AddFullSendDataByProtocol(unsigned char* pSrcData,unsigned
 		case PROTOCOLTYPE_RTC:
 			{
 				pData[4]=0x02;
+				pData[5]=0x0A;
+			}
+			break;
+		case PROTOCOLTYPE_ASSERVER:
+			{
+				pData[4]=0x07;
+				pData[5]=0x0A;
+			}
+			break;
+		case PROTOCOLTYPE_ASCLIENT:
+			{
+				pData[4]=0x08;
 				pData[5]=0x0A;
 			}
 			break;
@@ -314,6 +332,12 @@ void XSendDataManage::AddFullSendDataByProtocol(unsigned char* pSrcData,unsigned
 		case PROTOCOLTYPE_SPLITSCENE:
 			{
 				pData[4]=0x03;
+				pData[5]=0x0D;
+			}
+			break;
+		case PROTOCOLTYPE_SPLITINPUT:
+			{
+				pData[4]=0x04;
 				pData[5]=0x0D;
 			}
 			break;
@@ -585,6 +609,22 @@ void XSendDataManage::SendDataOfObtainUserPower(CString szUserName)
 	XJsonManage::GetInstance()->WriteJsonToObtainPower(szUserName,szData);
 
 	AddData(szData,PROTOCOLTYPE_OBTAINPOWER);
+}
+
+void XSendDataManage::SendDataOfObtainUserSecurity(CString szUserName,BOOL bCurUser)
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonToObtainUserSecurity(szUserName,szData,bCurUser);
+
+	AddData(szData,PROTOCOLTYPE_OBTAINUSERSECURITY);
+}
+
+void XSendDataManage::AddSendDataOfDelUserSecurity(CString szUserName)
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonToDelUserSecurity(szData,szUserName);
+
+	AddData(szData,PROTOCOLTYPE_OBTAINUSERSECURITY);
 }
 
 void XSendDataManage::SendDataOfObtainSubUserPower(int nID)
@@ -1375,4 +1415,44 @@ void XSendDataManage::AddSendDataOfDeleteSplitScene(CString szSceneName)
 	XJsonManage::GetInstance()->WriteJsonDeleteSplitScene(szData,szSceneName);
 
 	AddData(szData,PROTOCOLTYPE_SPLITSCENE);
+}
+
+void XSendDataManage::AddSendDataOfObtainSplitInput()
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonObtainSplitInput(szData);
+
+	AddData(szData,PROTOCOLTYPE_SPLITINPUT);
+}
+
+void XSendDataManage::SendDataOfSetUserDefaultSecurity(int nUserID,CString szName,CString szType)
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonSetUserDefaultSecurity(szData,nUserID,szName,szType);
+
+	AddData(szData,PROTOCOLTYPE_OBTAINUSERSECURITY);
+}
+
+void XSendDataManage::AddSendDataOfObtainAsServer()
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonAsServer(szData);
+
+	AddData(szData,PROTOCOLTYPE_ASSERVER);
+}
+
+void XSendDataManage::AddSendDataOfAlterPort(int nPort)
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonAlterServerPort(szData,m_pDelegate->GetCurIP(),nPort);
+
+	AddData(szData,PROTOCOLTYPE_ASSERVER);
+}
+
+void XSendDataManage::AddSendDataOfObtainAsClient()
+{
+	CString szData;
+	XJsonManage::GetInstance()->WriteJsonAsClient(szData);
+
+	AddData(szData,PROTOCOLTYPE_ASCLIENT);
 }

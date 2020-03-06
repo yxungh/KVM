@@ -89,6 +89,12 @@ CString HandlePower::GetPowerByByte(int nIndex,BOOL bByteFlag)
 					szPower=GetTranslationString(_T("510"));
 			}
 			break;
+		case 11:
+			{
+				if(bByteFlag)
+					szPower=GetTranslationString(_T("511"));
+			}
+			break;
 		case 20:
 			{
 				if(bByteFlag)

@@ -187,6 +187,8 @@ private:
 	int GetItemCount();
 	void InsertSubPowerList(int nItem,int nRadio);
 
+	//修改用户只修改用户权限
+	void AlterUserPower(CString szName);
 
 private:
 	void ClearMapUserPower();

@@ -40,8 +40,9 @@
 #include "XMessageBox.h"
 #include "XTakeOver.h"
 #include "XNodeStatus.h"
-//#include <thread>
-//#include <mutex>
+#include "XDeviceConn.h"
+#include "XClient.h"
+#include "XServer.h"
 
 
 
@@ -66,6 +67,26 @@ XNodeManage::~XNodeManage()
 	ClearMapGroupMainSec();
 	ClearMapNodeMainSec();
 	ClearMapTakeOver();
+	ClearVecClient();
+	ClearVecServer();
+}
+
+void XNodeManage::ClearVecClient()
+{
+	for(auto& pClient:m_VecClient)
+	{
+		delete pClient;
+	}
+	m_VecClient.clear();
+}
+
+void XNodeManage::ClearVecServer()
+{
+	for(auto& pServer:m_VecServer)
+	{
+		delete pServer;
+	}
+	m_VecServer.clear();
 }
 
 void XNodeManage::ClearMapChannel()
@@ -2672,6 +2693,60 @@ void XNodeManage::OperateOfOpenScene()
 //	//XScene::GetInstance()->InitScene();
 //}
 
+VEC_CLIENT& XNodeManage::GetVecClient()
+{
+	return m_VecClient;
+}
+
+void XNodeManage::OperateOfDeviceConn()
+{
+	XDeviceConn dlg;
+	m_pDeviceConn=&dlg;
+	dlg.SetDelegate(this);
+	dlg.DoModal();
+
+	m_pDeviceConn=NULL;
+}
+
+void XNodeManage::OperateOfReAsServer(char* pData)
+{
+	XResult result;
+	XJsonManage::GetInstance()->ParseJsonToAsServer(pData,m_VecClient,result);
+	
+	if(result.GetSendType()==_T("QUERY"))
+	{
+		if(result.GetResult()!=0)
+			return;
+
+
+
+
+	}
+	else if(result.GetSendType()==_T("ADD"))
+	{
+		if(result.GetResult()!=0)
+			return;
+
+		if(NULL!=m_pDeviceConn)
+		{
+			m_pDeviceConn->CloseAlterPortDlg();
+		}
+
+
+	}
+
+
+
+}
+
+void XNodeManage::OperateOfReAsClient(char* pData)
+{
+	TRACE(_T("Server\n"));
+
+	//XResult result;
+	//XJsonManage::GetInstance()->ParseJsonToAsClient(pData,m_VecClient,result);
+}
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 void XNodeManage::Operate(OPERATETYPE type,void* pData)
@@ -2867,6 +2942,22 @@ void XNodeManage::Operate(OPERATETYPE type,void* pData)
 	case OPERATETYPE_OPENTAKEOVERSCENE:
 		{
 			OperateOfOpenScene();
+		}
+		break;
+	case OPERATETYPE_DEVICECONN:
+		{
+			//Éè±¸»¥Áª
+			OperateOfDeviceConn();
+		}
+		break;
+	case OPERATETYPE_REASSERVER:
+		{
+			OperateOfReAsServer((char*)pData);
+		}
+		break;
+	case OPERATETYPE_REASCLIENT:
+		{
+			OperateOfReAsClient((char*)pData);
 		}
 		break;
 	default:

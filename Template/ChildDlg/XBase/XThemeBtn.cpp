@@ -55,7 +55,9 @@ BOOL XThemeBtn::DrawItem(CDC *pDC)
 	HBITMAP hOldbmp=(HBITMAP)SelectObject(hMemdc,hMembmp);
 
 	Graphics graphics(hMemdc);
+
 	graphics.Clear(m_FillColor);
+
 
 	DrawText(graphics,rt);
 
@@ -67,6 +69,8 @@ BOOL XThemeBtn::DrawItem(CDC *pDC)
 
 	return TRUE;
 }
+
+
 
 void XThemeBtn::DrawText(Graphics& graphics,CRect& rt)
 {

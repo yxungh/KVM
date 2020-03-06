@@ -123,6 +123,7 @@ private:
 	void OperateOfRestore();
 	void OperateOfExtend();
 	void OperateOfCloseSignal();
+	void OperateOfSignalProperty();
 
 
 public:

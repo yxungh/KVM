@@ -109,6 +109,8 @@ public:
 	//判断名称是否存在
 	BOOL DecidedGroupNameExist(CString szName);
 	BOOL DecidedNodeNameExist(CString szName);
+	//返回数据，拼接输入
+	void ReciveDataOfSplitInput(char* pData);
 
 private:
 
@@ -167,6 +169,7 @@ private:
 
 	void ClearVecDrag();
 	void ClearVecDel();
+	void ClearSplitInput();
 
 	//////////////////////////////////////////////////////////////////////////
 public:
@@ -210,5 +213,11 @@ private:
 
 	//从组里删除的节点
 	VEC_DEL m_VecDel;
+
+private:
+
+	//输入源集合
+	VEC_SPLITINPUT m_VecSplitInput;
+
 
 };

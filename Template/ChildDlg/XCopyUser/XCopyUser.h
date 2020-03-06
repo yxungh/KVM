@@ -15,7 +15,7 @@ public:
 	virtual ~XCopyUser();
 
 	virtual BOOL OnInitDialog();
-	virtual void OnOk();
+	//virtual void OnOk();
 
 	// 对话框数据
 	enum { IDD = IDD_DIALOG_COPYUSER };
@@ -31,6 +31,7 @@ public:
 	inline void SetDelegate(XDelegateCopyUser* p){m_pDelegate=p;}
 	inline CString GetUserName(){return m_szUserName;}
 	inline CString GetPassWd(){return m_szPassWd;}
+	void CloseDlg();
 
 private:
 

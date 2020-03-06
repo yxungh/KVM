@@ -19,6 +19,7 @@
 #include <algorithm>
 #include "XSplitWindow.h"
 #include "XScene.h"
+#include "XSignalProperty.h"
 
 
 
@@ -798,7 +799,7 @@ void XSplitManage::ShowMenu()
 	menu.AppendMenu(MF_STRING,ID_MENU_CLOSESIGNAL,_C(_T("20"),_T("关闭")));
 
 	menu.AppendMenu(MF_SEPARATOR);
-	menu.AppendMenu(MF_STRING,ID_MENU_PROPERTY,_C(_T("342"),_T("属性")));
+	menu.AppendMenu(MF_STRING,ID_MENU_SPROPERTY,_C(_T("342"),_T("属性")));
 	menu.TrackPopupMenu(TPM_LEFTALIGN|TPM_LEFTBUTTON,p.x,p.y,m_pDelegate->GetCWND());
 	menu.DestroyMenu();
 }
@@ -824,6 +825,14 @@ void XSplitManage::CloseSignal(int nID)
 	{
 		XSendDataManage::GetInstance()->AddSendDataOfDelSignal(m_szSplitName,m_pTempSignal->GetSignalID());
 	}	
+}
+
+void XSplitManage::OperateOfSignalProperty()
+{
+	//信号属性
+	XSignalProperty dlg;
+	dlg.DoModal();
+
 }
 
 void XSplitManage::CloseShowSignal(int nID)
@@ -1410,6 +1419,11 @@ void XSplitManage::Operate(OPERATETYPE type,void* pData)
 		case OPERATETYPE_MENUCLOSESIGNAL:
 			{
 				OperateOfCloseSignal();
+			}
+			break;
+		case OPERATETYPE_SPROPERTY:
+			{
+				OperateOfSignalProperty();
 			}
 			break;
 		case OPERATETYPE_LIMIT:

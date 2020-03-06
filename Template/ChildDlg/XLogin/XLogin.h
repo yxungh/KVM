@@ -17,7 +17,7 @@ public:
 
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	virtual BOOL OnInitDialog();
-	virtual void OnOk();
+	//virtual void OnOk();
 
 	// 对话框数据
 	enum { IDD=IDD_DIALOG_LOGIN };
@@ -37,6 +37,8 @@ public:
 
 	void SetDlgStatus(BOOL b);
 	void StopTimer();
+
+	void CloseDlg();
 
 private:
 

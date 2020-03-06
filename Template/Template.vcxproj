@@ -62,7 +62,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\ChildDlg\XProperty;.\ChildDlg\XSplitSaveScene;.\ChildDlg\XFolder;.\StatusBar;.\ChildDlg\XMatrixArray;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\Include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\XLog;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\ProperssCtrl;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\Matrix;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ListCtrl;.\ChildDlg\XCopyUser;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\UserManage;.\DataManage;.\Result;.\JsonManage;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBarManage;.\RibbonBar;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;.\ChildDlg\XBase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\ChildDlg\XDeviceConn;.\ChildDlg\XSecurity;.\MD5;.\ChildDlg\XProperty;.\ChildDlg\XSplitSaveScene;.\ChildDlg\XFolder;.\StatusBar;.\ChildDlg\XMatrixArray;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\Include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\XLog;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\ProperssCtrl;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\XDeviceConn;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\Matrix;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ListCtrl;.\ChildDlg\XCopyUser;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\UserManage;.\DataManage;.\Result;.\JsonManage;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBarManage;.\RibbonBar;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;.\ChildDlg\XBase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,7 +88,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\ChildDlg\XProperty;.\ChildDlg\XMatrixArray;.\ViewManage\Matrix;.\ChildDlg\XFolder;.\ChildDlg\XLog;.\ChildDlg\XSplitSaveScene;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\DataManage;.\ProperssCtrl;.\ChildDlg\XBase;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ChildDlg\XCopyUser;.\ListCtrl;.\Result;.\JsonManage;.\UserManage;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBar;.\StatusBar;.\RibbonBarManage;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\ViewManage\NodeManage\XDeviceConn;.\ChildDlg\XDeviceConn;.\ChildDlg\XSecurity;.\MD5;.\ChildDlg\XProperty;.\ChildDlg\XMatrixArray;.\ViewManage\Matrix;.\ChildDlg\XFolder;.\ChildDlg\XLog;.\ChildDlg\XSplitSaveScene;.\ChildDlg\AddSplit;.\ViewManage\SplitManage;.\ViewManage\NodeManage\XChart;.\include;.\ChildDlg\XScreenArray;.\ChildDlg\XAddGroup;.\ChildDlg\XAlterGroup;.\ChildDlg\XSetScreenArrage;.\ChildDlg\XSeatImage;.\ChildDlg\XAlign;.\ChildDlg\XSeatDraw;.\ChildDlg\XSeatArrage;.\ChildDlg\XSeatMap;.\ChildDlg\XMenuInfo;.\ChildDlg\XDeviceNet;.\ChildDlg\XBackGround;.\VideoPlayer;.\ChildDlg\XAlterUser;.\ChildDlg\About;.\ViewManage\SeatArrangeManage\Info;.\ChildDlg\XSeatArageName;.\SeatArrageWnd;.\InternalManage\XTabCtrl;.\DataManage;.\ProperssCtrl;.\ChildDlg\XBase;.\ChildDlg\XImage;.\Button;.\ChildDlg\XImagePreview;.\ChildDlg\XOSDImage;.\ViewManage\SeatArrangeManage;.\ChildDlg\XAlterNodeName;.\LeftWnd;.\ViewManage\NodeManage\Info;.\ChildDlg\XNodeLoginUser;.\ProperitesWnd;.\ViewManage\NodeManage;.\ViewManage;.\UserManage\Info;.\ChildDlg\XCopyUser;.\ListCtrl;.\Result;.\JsonManage;.\UserManage;.\ChildDlg\XAddUser;.\ChildDlg\XPowerManage;.\ChildDlg\XLoginLoad;.\ChildDlg\XLogin;.\ChildDlg;.\InputSignalPane;.\NetManage;.\MessageBox;.\IniManage;.\Constant;.\TranslationManage;.\Handle;.\InternalManage;.\RibbonBar;.\StatusBar;.\RibbonBarManage;.\ChildDlg\XAddStore;.\CatchError;.\ChildDlg\XCenterControl;.\Scene;.\ChildDlg\XSaveScene;.\ChildDlg\XUpdate;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -243,6 +243,7 @@
     <ClInclude Include="ListCtrl\XListCtrl.h" />
     <ClInclude Include="ListCtrl\XSetListCtrl.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MD5\XMD5.h" />
     <ClInclude Include="MessageBox\XMessageBox.h" />
     <ClInclude Include="MessageBox\XMessageBoxDlg.h" />
     <ClInclude Include="NetManage\XBaseNetManage.h" />
@@ -354,6 +355,11 @@
     <ClInclude Include="ViewManage\SplitManage\XCaculateSplitManage.h" />
     <ClInclude Include="ChildDlg\AddSplit\XAddSplit.h" />
     <ClInclude Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.h" />
+    <ClInclude Include="ChildDlg\XSecurity\XDelegateSecurity.h" />
+    <ClInclude Include="ViewManage\NodeManage\XDeviceConn\XClient.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XDelegateDeviceConn.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XDelegateDeviceServer.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XAlterPort.h" />
     <ClInclude Include="XDelegateView.h" />
     <ClInclude Include="ViewManage\NodeManage\XNodeManage.h" />
     <ClInclude Include="ViewManage\XBaseViewManage.h" />
@@ -411,6 +417,19 @@
     <ClInclude Include="Result\XSplitSceneResult.h" />
     <ClInclude Include="ViewManage\SplitManage\XSplitScene.h" />
     <ClInclude Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.h" />
+    <ClInclude Include="ChildDlg\XProperty\XSignalProperty.h" />
+    <ClInclude Include="ViewManage\SplitManage\XSplitInput.h" />
+    <ClInclude Include="Result\XSplitInputResult.h" />
+    <ClInclude Include="UserManage\Info\XUserSecurity.h" />
+    <ClInclude Include="Result\XSecurityResult.h" />
+    <ClInclude Include="ChildDlg\XSecurity\XSecurityDlg.h" />
+    <ClInclude Include="ChildDlg\XSecurity\XSetSecretDlg.h" />
+    <ClInclude Include="ChildDlg\XSecurity\XSetPassWord.h" />
+    <ClInclude Include="ChildDlg\XSecurity\XResetPassWord.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceConn.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceServer.h" />
+    <ClInclude Include="ChildDlg\XDeviceConn\XDeviceClient.h" />
+    <ClInclude Include="ViewManage\NodeManage\XDeviceConn\XServer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CatchError\CatchError.cpp" />
@@ -473,6 +492,7 @@
     <ClCompile Include="ListCtrl\XListCtrl.cpp" />
     <ClCompile Include="ListCtrl\XSetListCtrl.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MD5\XMD5.cpp" />
     <ClCompile Include="MessageBox\XMessageBox.cpp" />
     <ClCompile Include="MessageBox\XMessageBoxDlg.cpp" />
     <ClCompile Include="NetManage\XBaseNetManage.cpp" />
@@ -584,6 +604,11 @@
     <ClCompile Include="ViewManage\SplitManage\XCaculateSplitManage.cpp" />
     <ClCompile Include="ChildDlg\AddSplit\XAddSplit.cpp" />
     <ClCompile Include="ChildDlg\XSplitSaveScene\XDelegateSaveSplitScene.cpp" />
+    <ClCompile Include="ChildDlg\XSecurity\XDelegateSecurity.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XDeviceConn\XClient.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XDelegateDeviceConn.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XDelegateDeviceServer.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XAlterPort.cpp" />
     <ClCompile Include="XDelegateView.cpp" />
     <ClCompile Include="ViewManage\NodeManage\XNodeManage.cpp" />
     <ClCompile Include="ViewManage\XBaseViewManage.cpp" />
@@ -641,6 +666,19 @@
     <ClCompile Include="Result\XSplitSceneResult.cpp" />
     <ClCompile Include="ViewManage\SplitManage\XSplitScene.cpp" />
     <ClCompile Include="ChildDlg\XSplitSaveScene\XSaveSplitScene.cpp" />
+    <ClCompile Include="ChildDlg\XProperty\XSignalProperty.cpp" />
+    <ClCompile Include="ViewManage\SplitManage\XSplitInput.cpp" />
+    <ClCompile Include="Result\XSplitInputResult.cpp" />
+    <ClCompile Include="UserManage\Info\XUserSecurity.cpp" />
+    <ClCompile Include="Result\XSecurityResult.cpp" />
+    <ClCompile Include="ChildDlg\XSecurity\XSecurityDlg.cpp" />
+    <ClCompile Include="ChildDlg\XSecurity\XSetSecretDlg.cpp" />
+    <ClCompile Include="ChildDlg\XSecurity\XSetPassWord.cpp" />
+    <ClCompile Include="ChildDlg\XSecurity\XResetPassWord.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceConn.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceServer.cpp" />
+    <ClCompile Include="ChildDlg\XDeviceConn\XDeviceClient.cpp" />
+    <ClCompile Include="ViewManage\NodeManage\XDeviceConn\XServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Template.rc" />
@@ -648,6 +686,7 @@
   <ItemGroup>
     <Image Include="res\add.ico" />
     <Image Include="res\control.ico" />
+    <Image Include="res\deviceConn.ico" />
     <Image Include="res\folder.ico" />
     <Image Include="res\icon3.ico" />
     <Image Include="res\level.ico" />
@@ -657,6 +696,7 @@
     <Image Include="res\signalModel.ico" />
     <Image Include="res\top.ico" />
     <Image Include="res\update.ico" />
+    <Image Include="res\userpower.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

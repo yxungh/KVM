@@ -18,7 +18,10 @@
 #include "XFolder.h"
 #include "XFolderResult.h"
 #include "XFolderInfo.h"
-
+#include "XMD5.h"
+#include "XUserSecurity.h"
+#include "XSecurityResult.h"
+#include "XSecurityDlg.h"
 
 
 XUserManage::XUserManage()
@@ -35,8 +38,18 @@ XUserManage::~XUserManage()
 	ClearUserIDAll();
 	ClearMapRoot();
 	ClearMapSubFolder();
+	ClearMapUserSecurity();
 	StopSubFolderThread();
 	DeleteCriticalSection(&m_CS);
+}
+
+void XUserManage::ClearMapUserSecurity()
+{
+	for(auto& map:m_MapUserSecurity)
+	{
+		delete map.second;
+	}
+	m_MapUserSecurity.clear();
 }
 
 void XUserManage::ClearMapSubFolder()
@@ -204,7 +217,8 @@ void XUserManage::ObtainSubUserPower()
 		XSubUserInfo* pSubUser=iter->second;
 		int nID=pSubUser->GetID();
 		XSendDataManage::GetInstance()->SendDataOfObtainSubUserPower(nID);
-		//XSendDataManage::GetInstance()->SendDataOfObtainUserPower(szSubUserName);
+		//获取当前用户安全问题(子用户)
+		XSendDataManage::GetInstance()->SendDataOfObtainUserSecurity(szSubUserName,FALSE);
 	}
 }
 
@@ -359,11 +373,14 @@ void XUserManage::OperateOfReLogin(char* pData)
 	{
 		//现在新加加密登录 返回值为1
 		case 1:
-		case 2:
+		case 2://代表使用初始密码登录成功，提醒需要修改密码
 		case KVM_ERR_USER_ALREADY_LOGIN:
 			{
+				USES_CONVERSION;
+				CString szPassWdMd5(XMD5(W2A(m_szLoginPassWd)).toString().c_str());
+
 				if(m_szLoginUser==UserInfo.GetUserName()&&
-				   m_szLoginPassWd==UserInfo.GetPassWd())
+				   szPassWdMd5==UserInfo.GetPassWd())
 				{
 					//登陆成功
 					SetLogin(TRUE);
@@ -372,7 +389,7 @@ void XUserManage::OperateOfReLogin(char* pData)
 
 					//m_pDelegate->SetStatusBarInfo();
 					m_pLogin->SetDlgStatus(FALSE);
-					m_pLogin->OnOk();
+					m_pLogin->CloseDlg();
 
 					//添加坐席
 					m_pDelegate->Operate(OPERATETYPE_ADDSEAT,NULL);
@@ -382,6 +399,8 @@ void XUserManage::OperateOfReLogin(char* pData)
 
 					//获取当前用户权限
 					XSendDataManage::GetInstance()->SendDataOfObtainUserPower(UserInfo.GetUserName());
+					//获取当前用户安全问题
+					XSendDataManage::GetInstance()->SendDataOfObtainUserSecurity(UserInfo.GetUserName(),TRUE);
 					//获取子用户列表
 					//用户太多的话需要分页获取(暂时不分页)
 					XSendDataManage::GetInstance()->AddSendDataOfObtainUserList(0,0);
@@ -413,6 +432,8 @@ void XUserManage::OperateOfReLogin(char* pData)
 					m_pDelegate->Operate(OPERATETYPE_GETSPLITWALL,NULL);
 					//获取拼接场景
 					m_pDelegate->Operate(OPERATETYPE_SPLITSCENE,NULL);
+					//获取拼接输入列表
+					XSendDataManage::GetInstance()->AddSendDataOfObtainSplitInput();
 
 
 
@@ -540,6 +561,9 @@ void XUserManage::OperateOfRePowerManage(char* pData)
 				m_pPowerManage->UpdateUserList(updateUserInfo.GetUserID(),updateUserInfo.GetUserName());
 				m_pPowerManage->CloseAddUserDlg();
 				m_pPowerManage->CloseCopyUserDlg();
+
+				SetUserDefaultSecurityInfo(updateUserInfo.GetUserID(),updateUserInfo.GetUserName());
+
 			}
 		}
 	}
@@ -590,6 +614,18 @@ void XUserManage::OperateOfRePowerManage(char* pData)
 				break;
 		}
 	}
+}
+
+void XUserManage::SetUserDefaultSecurityInfo(int nUserID,CString szName)
+{
+	//XUserSecurity security;
+	//security.m_szKeyMd5=_T("00000000000000000000000000000000");
+	//security.m_nSecurityMark=0;
+	//security.m_nAnswerNum=2;//安全先设置2个
+
+
+	//添加用户设置用户默认安全信息
+	XSendDataManage::GetInstance()->SendDataOfSetUserDefaultSecurity(nUserID,szName,_T("ADD"));
 }
 
 void XUserManage::OperateOfReUserList(char* pData)
@@ -703,6 +739,50 @@ void XUserManage::OperateOfReRootFolder(char* pData)
 		 
 }
 
+void XUserManage::OperateOfReUserSecurity(char* pData)
+{
+	XSecurityResult result;
+	XJsonManage::GetInstance()->ParseJsonToUserSecurity(pData,m_MapUserSecurity,result);
+	if(result.GetSendType()==_T("QUERY"))
+	{
+		//查询所有用户安全权限
+
+	}
+	else if(result.GetSendType()==_T("DEL"))
+	{
+		if(result.GetResult()!=0)
+			return;
+
+		//发送删除用户
+		XSendDataManage::GetInstance()->AddSendDataOfDelUser(result.m_szUserName);
+	}
+	else if(result.GetSendType()==_T("ADD"))
+	{	
+		if(result.GetResult()==101)
+		{
+			//初始化成功 在添加用户
+
+		}	
+		else if(result.GetResult()==-119)
+		{
+			//添加时已经存在
+			XSendDataManage::GetInstance()->SendDataOfSetUserDefaultSecurity(result.m_nUserID,result.m_szUserName,_T("UPDATE"));
+		}
+	}
+
+
+
+}
+
+void XUserManage::OperateOfSecurity()
+{
+	//安全中心
+	XSecurityDlg dlg;
+	dlg.DoModal();
+
+
+}
+
 //////////////////////////////////////////////////////////////////////////
 void XUserManage::Operate(OPERATETYPE type,void* pData)
 {
@@ -758,6 +838,16 @@ void XUserManage::Operate(OPERATETYPE type,void* pData)
 				OperateOfReStoreList((char*)pData);
 			}
 			break;
+		case OPERATETYPE_REUSERSECURITY:
+			{
+				OperateOfReUserSecurity((char*)pData);
+			}
+			break;
+		case OPERATETYPE_SECURITY:
+			{
+				OperateOfSecurity();
+			}
+			break;
 		default:
 			break;
 	}
@@ -784,6 +874,8 @@ void XUserManage::UpdateControlUI(CMDUITYPE type,CCmdUI* pCmdUI)
 		//case CMDUITYPE_ADDMODEL:
 		//case CMDUITYPE_LIMITNMODEL:
 		//case CMDUITYPE_SAVESPLITSCENE:
+		//case CMDUITYPE_SECURITY:
+		//case CMDUITYPE_DEVICECONN:
 		case CMDUITYPE_SAVESCENE:
 		case CMDUITYPE_SAVESEAT:
 		case CMDUITYPE_SENDSEAT:

@@ -37,6 +37,8 @@ private:
 	//用户权限（包含登录用户与子用户）
 	void DecodePower(unsigned char* pData,int nDataLen);
 
+	void DecodeUserSecurity(unsigned char* pData,int nDataLen);
+
 	void DecodeUserList(unsigned char* pData,int nDataLen);
 
 	void DecodeStoreList(unsigned char* pData,int nDataLen);
@@ -98,6 +100,12 @@ private:
 	void DecodeSplitWindow(unsigned char* pData,int nDataLen);
 
 	void DecodeSplitScene(unsigned char* pData,int nDataLen);
+
+	void DecodeSplitInput(unsigned char* pData,int nDataLen);
+
+	void DecodeAsServer(unsigned char* pData,int nDataLen);
+
+	void DecodeAsClient(unsigned char* pData,int nDataLen);
 
 private:
 
